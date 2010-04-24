@@ -11,7 +11,7 @@ Then:
    :ref:`git-config` then you could use the configured alias for
    ``status`` - as it ``git stat``.  You'll see a listing like this one::
 
-
+   
 
 
 Merging from trunk
