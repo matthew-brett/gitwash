@@ -27,6 +27,20 @@ Configure git_ by identifying yourself, and adding some aliases to
 common commands.  We'll use these aliases later.  You only need to do
 this once for each computer on which you will use git::
 
+  # optional - configure your default text editor for git
+  git config --global core.editor emacs
+  # give your name and email address to label your commits
+  git config --global user.email you@yourdomain.example.com
+  git config --global user.name "Your Name Comes Here"
+  # add some useful aliases
+  git config --global alias.ca commit\ -a # git ca -> git commit -a 
+  git config --global alias.st status
+  git config --global alias.stat status
+  git config --global alias.co checkout
+  # add some nice colors to diff printouts and status output
+  git config --global color.diff auto
+  git config --global color.status true
+
 
 
 
