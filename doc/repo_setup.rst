@@ -7,6 +7,8 @@ to the instructions at http://help.github.com/forking/ - please see that
 page for more detail.  We're repeating most of it here just to give the
 specifics for the |reponame| project, and to suggest some default names.
 
+.. _forking:
+
 Create your own repository fork
 ===============================
 
@@ -18,6 +20,8 @@ Create your own repository fork
 
    Now, after a short pause and some 'Hardcore forking action', you
    should find yourself at the home page for your own forked copy of |reponame|
+
+.. _cloning:
 
 Clone your fork
 ===============

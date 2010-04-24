@@ -22,6 +22,8 @@ Windows          Download and install msysGit_
 OS X             Use the git-osx-installer_
 ================ =============
 
+.. _git-config:
+
 Configure GIT on each computer
 ==============================
 
@@ -36,7 +38,7 @@ this once for each computer on which you will use git::
   git config --global user.name "Your Name Comes Here"
   # add some useful aliases
   git config --global alias.ca "commit -a" # git ca -> git commit -a 
-  git config --global alias.st status4
+  git config --global alias.st status
   git config --global alias.stat status
   git config --global alias.co checkout
   # add some nice colors to diff printouts and status output

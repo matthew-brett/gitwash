@@ -2,6 +2,18 @@
  Standard git workflow
 =======================
 
+If you haven't already, :ref:`forking`, and :ref:`cloning`, and |repo-cd|
+
+Then:
+
+#. Make some changes
+#. Check what has changed with ``git status``.  If you have done
+   :ref:`git-config` then you could use the configured alias for
+   ``status`` - as it ``git stat``.  You'll see a listing like this one::
+
+
+
+
 Merging from trunk
 ==================
 
@@ -18,3 +30,4 @@ then merging into your current branch::
 
 
 .. include:: links_names.txt
+.. include:: substitutions.txt
