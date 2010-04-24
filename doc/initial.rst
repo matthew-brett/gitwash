@@ -41,7 +41,22 @@ this once for each computer on which you will use git::
   git config --global color.diff auto
   git config --global color.status true
 
+In fact, these commands will write to your user's git configuration file
+``~/.gitconfig``.  Specifically this file will become::
 
+  [core]
+          editor = emacs
+  [user]
+          email = you@yourdomain.example.com
+          name = Your Name Comes Here
+  [alias]
+          ca = commit -a
+          st = status
+          stat = status
+          co = checkout
+  [color]
+          diff = auto
+          status = true
 
 
 
