@@ -19,10 +19,8 @@ Create your own repository fork
    Now, after a short pause and some 'Hardcore forking action', you
    should find yourself at the home page for your own forked copy of |reponame|
 
-.. _linking-to-mainline:
-
-Linking the repository to the original repository
-=================================================
+Clone your fork
+===============
 
 #. Clone your fork to the local computer with |repoclone|
 #. Investigate.  Change directory to your new repo: |repo-cd| . Then
@@ -40,8 +38,13 @@ Linking the repository to the original repository
    Now you want to connect to the mainline |repourl| repository, so you
    can merge in changes from trunk.
 
-#. Add the connection to |repourl| by |repo-cd| if you haven't done this
-   already, then run |repo-add-remote|
+.. _linking-to-mainline:
+
+Linking your repository to the mainline repo
+============================================
+
+#. |repo-cd| if you haven't done this already
+#. |repo-add-remote|
 
    Note that we've used ``git://`` for the URL rather than ``git@``.  The
    ``git://`` URL is read only.  This means we that we can't
