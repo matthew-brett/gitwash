@@ -12,8 +12,9 @@ Contents:
    :maxdepth: 2
 
    intro
-   initial
-   standard
+   git_setup
+   repo_setup
+   standard_workflow
 
 
 Indices and tables
