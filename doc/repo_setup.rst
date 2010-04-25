@@ -1,30 +1,14 @@
-=============================
- Initial setup of repository
-=============================
+.. _cloning-linking:
 
-You need to do this only once.  The instructions here are very similar
-to the instructions at http://help.github.com/forking/ - please see that
-page for more detail.  We're repeating most of it here just to give the
-specifics for the |reponame| project, and to suggest some default names.
-
-.. _forking:
-
-Create your own repository fork
-===============================
-
-#. Log into your github_ account.
-#. Go to the |reponame| github home at |repourl|. 
-#. Click on the *fork* button:
-
-   .. image:: forking_button.png
-
-   Now, after a short pause and some 'Hardcore forking action', you
-   should find yourself at the home page for your own forked copy of |reponame|
-
-.. _cloning:
+=====================
+ Cloning and linking
+=====================
 
 Clone your fork
 ===============
+
+You have already created your own fork of the |reponame| repository, by
+following the steps in :ref:`forking`. Now:
 
 #. Clone your fork to the local computer with |repoclone|
 #. Investigate.  Change directory to your new repo: |repo-cd| . Then

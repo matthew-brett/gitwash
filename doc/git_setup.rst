@@ -1,8 +1,6 @@
-=========
-GIT setup
-=========
-
-Before you get going with git_, you'll need to install it, and configure it.
+===========================
+git setup for each computer
+===========================
 
 Install
 =======
@@ -24,29 +22,14 @@ OS X             Use the git-osx-installer_
 
 .. _git-config:
 
-Configure GIT on each computer
-==============================
+Configure
+=========
 
 Configure git_ by identifying yourself, and adding some aliases to
 common commands.  We'll use these aliases later.  You only need to do
-this once for each computer on which you will use git::
-
-  # optional - configure your default text editor for git
-  git config --global core.editor emacs
-  # give your name and email address to label your commits
-  git config --global user.email you@yourdomain.example.com
-  git config --global user.name "Your Name Comes Here"
-  # add some useful aliases
-  git config --global alias.ca "commit -a" # git ca -> git commit -a 
-  git config --global alias.st status
-  git config --global alias.stat status
-  git config --global alias.co checkout
-  # add some nice colors to diff printouts and status output
-  git config --global color.diff auto
-  git config --global color.status true
-
-In fact, these commands will write to your user's git configuration file
-``~/.gitconfig``.  Specifically this file will become::
+this once for each computer on which you will use git.  The easiest way
+to do this, is to create a ``.gitconfig`` file in your home directory,
+with contents like this::
 
   [core]
           editor = emacs
@@ -62,17 +45,33 @@ In fact, these commands will write to your user's git configuration file
           diff = auto
           status = true
 
-To set up on another computer, run the commands again, or just copy your
-``.gitconfig`` file to the home directory on your new computer.
+(of course you'll need to set your email and name, and may want to set
+your editor).  If you prefer, you can do the same thing from the command
+line::
 
-Set up and configure a github_ account
-======================================
+  # optional - configure your default text editor for git
+  git config --global core.editor emacs
+  # give your name and email address to label your commits
+  git config --global user.email you@yourdomain.example.com
+  git config --global user.name "Your Name Comes Here"
+  # add some useful aliases
+  git config --global alias.ca "commit -a" # git ca -> git commit -a 
+  git config --global alias.st status
+  git config --global alias.stat status
+  git config --global alias.co checkout
+  # add some nice colors to diff printouts and status output
+  git config --global color.diff auto
+  git config --global color.status true
 
-If you don't have a github_ account, go to the github_ page, and make one. 
+These commands will write to your user's git configuration file
+``~/.gitconfig``. 
 
-You then need to configure your account to allow write access - see the
-``Generating SSH keys`` help on `github help`_.
+To set up on another computer, you can copy your ``~/.gitconfig`` file,
+or run the commands above.
 
+You may want to start just by following the latest source
+(:ref:`latest-source`) - or you may want to jump straight in as a
+developer (:ref:`start-as-developer`).
 
 .. include:: links_names.txt
 

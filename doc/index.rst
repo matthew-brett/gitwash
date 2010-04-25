@@ -13,8 +13,9 @@ Contents:
 
    intro
    git_setup
-   repo_setup
-   standard_workflow
+   following_latest
+   start_as_developer
+   development_workflow
 
 
 Indices and tables

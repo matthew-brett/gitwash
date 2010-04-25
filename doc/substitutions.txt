@@ -2,6 +2,7 @@
 
 .. |reponame| replace:: gitwash
 .. |repourl| replace:: http://github.com/matthew-brett/gitwash
-.. |repoclone| replace:: ``git clone git@github.com/your-user-name/gitwash.git``
+.. |repoclone-rw| replace:: ``git clone git@github.com:your-user-name/gitwash.git``
+.. |repoclone-ro| replace:: ``git clone git://github.com/your-user-name/gitwash.git``
 .. |repo-cd| replace:: ``cd gitwash``
 .. |repo-add-remote| replace:: ``git remote add mainline git://github.com/matthew-brett/gitwash.git``

@@ -1,37 +1,13 @@
-=======================
- Standard git workflow
-=======================
+========================
+git development workflow
+========================
 
-Editing and commiting
-======================
+If you haven't already, you need to follow the instructions at :ref:`forking`.
 
-If you haven't already, :ref:`forking`, and :ref:`cloning`, and |repo-cd|
+If you're starting as a developer
+and :ref:`cloning`, and |repo-cd|
 
-Then:
-
-#. Make some changes
-#. See which files have changed with ``git status``.  If you have done
-   :ref:`git-config` then you could use the configured alias for
-   ``status`` - as in ``git stat``.  You'll see a listing like this one::
-
-     # On branch master
-     # Changed but not updated:
-     #   (use "git add <file>..." to update what will be committed)
-     #   (use "git checkout -- <file>..." to discard changes in working directory)
-     #
-     #	modified:   README
-     #
-     # Untracked files:
-     #   (use "git add <file>..." to include in what will be committed)
-     #
-     #	INSTALL
-     no changes added to commit (use "git add" and/or "git commit -a")
-
-#. Check what the actual changes are with ``git diff``
-#. Add any new files to version control ``git add new_file_name``
-#. To commit all modified files, do ``git commit -am 'A commit
-   message'``.  Note the ``-a`` flag to ``git commit``.  This commits
-   *to your local machine*.
+You now might want to do some cycles of :ref:`edit-commit`.
 
 Pushing up to your github_ repo
 ===============================
@@ -72,7 +48,6 @@ Making a new local and remote branch
 
 If you want to delete a remote branch for some reason, see:
 http://github.com/guides/remove-a-remote-branch
-
 
 .. include:: links_names.txt
 .. include:: substitutions.txt
