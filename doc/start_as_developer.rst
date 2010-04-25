@@ -1,14 +1,16 @@
-.. _cloning-linking:
+.. _start-as-developer:
 
-=====================
- Cloning and linking
-=====================
+======================================
+ Starting from scratch as a developer
+======================================
+
+These are the instructions for the situation where you know that you
+want to edit the code and make your changes available to the rest of us.
+
+First you follow the instructions for :ref:`forking`. Now:
 
 Clone your fork
 ===============
-
-You have already created your own fork of the |reponame| repository, by
-following the steps in :ref:`forking`. Now:
 
 #. Clone your fork to the local computer with |repoclone|
 #. Investigate.  Change directory to your new repo: |repo-cd| . Then
