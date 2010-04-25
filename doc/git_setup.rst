@@ -70,7 +70,7 @@ To set up on another computer, you can copy your ``~/.gitconfig`` file,
 or run the commands above.
 
 You may want to start just by following the latest source
-(:ref:`latest-source`) - or you may want to jump straight in as a
+(:ref:`following-latest`) - or you may want to jump straight in as a
 developer (:ref:`start-as-developer`).
 
 .. include:: links_names.txt

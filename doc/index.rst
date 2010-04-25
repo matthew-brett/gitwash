@@ -17,7 +17,6 @@ Contents:
    start_as_developer
    development_workflow
 
-
 Indices and tables
 ==================
 

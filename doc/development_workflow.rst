@@ -1,11 +1,11 @@
+.. _development-workflow:
+
 ========================
 git development workflow
 ========================
 
-If you haven't already, you need to follow the instructions at :ref:`forking`.
-
-If you're starting as a developer
-and :ref:`cloning`, and |repo-cd|
+You already have your own copy of the |reponame| repository, either from
+:ref:`start-as-developer` or :ref:`follower-to-developer`.
 
 You now might want to do some cycles of :ref:`edit-commit`.
 

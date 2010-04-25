@@ -12,7 +12,7 @@ First you follow the instructions for :ref:`forking`. Now:
 Clone your fork
 ===============
 
-#. Clone your fork to the local computer with |repoclone|
+#. Clone your fork to the local computer with |repoclone-rw|
 #. Investigate.  Change directory to your new repo: |repo-cd| . Then
    ``git branch -a`` to show you all branches.  You'll get something
    like::
@@ -41,6 +41,7 @@ Linking your repository to the mainline repo
    accidentally (or deliberately) write to the mainline repo, and we are
    only going to use it to merge into our own code.
 
+You are now ready to follow the :ref:`development-workflow`.
 
 .. include:: links_names.txt
 .. include:: substitutions.txt

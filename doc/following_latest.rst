@@ -34,7 +34,7 @@ in your repository, by following the usual :ref:`edit-commit` cycle.
 You can still do ``git pull`` from time to time to merge the upstream
 code back into your local repository.
 
-If you find you'd like to give your changes back, then the just follow
-the instructions in :ref:`follower-to-developer`.
+If you find you'd like to give your changes back, then just follow the
+instructions in :ref:`follower-to-developer`.
 
 .. include:: substitutions.txt
