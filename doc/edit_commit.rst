@@ -1,8 +1,8 @@
 .. _edit-commit:
 
-=======================
- Editing and commiting
-=======================
+========================
+ Editing and committing
+========================
 
 #. |repo-cd|
 #. Make some changes

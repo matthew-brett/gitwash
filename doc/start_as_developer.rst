@@ -13,7 +13,7 @@ Clone your fork
 ===============
 
 #. Clone your fork to the local computer with |repoclone-rw|
-#. Investigate.  Change directory to your new repo: |repo-cd| . Then
+#. Investigate.  Change directory to your new repo: |repo-cd|. Then
    ``git branch -a`` to show you all branches.  You'll get something
    like::
 

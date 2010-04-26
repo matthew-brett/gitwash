@@ -14,7 +14,7 @@ There are good instructions here: http://book.git-scm.com/2_installing_git.html
 At the time of writing, these should work for some standard platforms:
 
 ================ =============
-Debian / ubuntu  ``sudo apt-get install git-core``
+Debian / Ubuntu  ``sudo apt-get install git-core``
 Fedora           ``sudo yum install git-core``
 Windows          Download and install msysGit_
 OS X             Use the git-osx-installer_
@@ -55,7 +55,7 @@ line::
   git config --global user.email you@yourdomain.example.com
   git config --global user.name "Your Name Comes Here"
   # add some useful aliases
-  git config --global alias.ca "commit -a" # git ca -> git commit -a 
+  git config --global alias.ca "commit -a" # git ca -> git commit -a
   git config --global alias.st status
   git config --global alias.stat status
   git config --global alias.co checkout
@@ -64,7 +64,7 @@ line::
   git config --global color.status true
 
 These commands will write to your user's git configuration file
-``~/.gitconfig``. 
+``~/.gitconfig``.
 
 To set up on another computer, you can copy your ``~/.gitconfig`` file,
 or run the commands above.
