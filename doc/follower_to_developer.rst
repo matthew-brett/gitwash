@@ -32,14 +32,9 @@ Overview
 
 Then::
 
-   # remove read-only pointer to upstream repository
    git remote rm origin
-   # add pointer to your own fork
-   git remote add origin git@github.com:you-user-name/nipy.git
-   # add back renamed read-only pointer to upstream
+   git remote add origin git@github.com:your-user-name/nipy.git
    git remote add mainline git://github.com/gitwash/nipy.git
-   # push your branch to github
-   git checkout my-edits
    git push origin my-edits
 
 Details
@@ -60,8 +55,29 @@ Make a forked copy of nipy
 
 .. include:: make_fork.txt
 
+Link your local branch to github
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Git uses the ``origin`` name to point to the main home of this
+repository.  You want to set this to be your forked copy.
 
+First, delete the current ``origin`` link, because that points to the
+main *nipy* repository::
+
+   git remote rm origin
+
+Next make ``origin`` point to your new forked copy::
+
+   git remote add origin git@github.com:your-user-name/nipy.git
+
+Add back the reference to the main *nipy* repository, but with another
+name::
+
+   git remote add mainline git://github.com/gitwash/nipy.git
+
+Next push your own branch into your own github copy of *nipy*::
+
+   git push origin my-edits
 
 
 Making a patch
