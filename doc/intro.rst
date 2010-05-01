@@ -2,20 +2,20 @@
  Introduction
 ==============
 
-This is a small project to describe a git_ workflow for the |reponame| project.
+This is a small project to describe a git_ / github_ workflow for the
+nipy_ project.
 
-There are two different workflows here, for two different ways of working with |reponame|.
+There are several different workflows here, for different ways of
+working with *nipy*.
 
-The first way of working we call *latest source user* mode.  You don't yet
-think you'll be contributing code, but you want to be able to keep up to
-date with the latest version of the source code.
+This is not a comprehensive git_ reference, it's just a workflow for our
+own project.  You may well find better or quicker ways of getting stuff
+done with git_, but these should get you started.
 
-The second is *developer* mode - you think you will probably want to
-contribute code or patches to |reponame|.
+There are several excellent general git tutorials:
 
-In fact it turns out that it's fairly easy to switch from a *latest
-source user* to a *developer* if you need to.
+* `git cheat sheet`_
+* `pro git book`_
 
 
 .. include:: links_names.txt
-.. include:: substitutions.txt

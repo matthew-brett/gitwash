@@ -4,30 +4,76 @@
  Changing from following the code, to development
 ==================================================
 
-This is to deal with the situation where you started just
-:ref:`following-latest` but then found that you would like to publish
-some changes that you've made, therefore making your |reponame| friends
-happy.
+Private edits, keeping track of upstream development
+====================================================
 
-First, make your own github_ copy of the repository to work in, by :ref:`forking`. 
+Overview
+--------
 
-Next, you want to do a final update on your local repository:
+::
+       
+   # make new branch
+   git branch my-edits
+   git checkout my-edits
+   # hack hack
+   git commit -am 'My edits in my branch'
+   # update your branch from upstream
+   git pull origin/master
 
-#. |repo-cd|
-#. ``git pull``
+Keeping a github_ copy of your private edits
+============================================
 
-Now, you want to point your local repository at your new forked
-repository, as well as maintaining the link with the mainline |reponame|
-repository.   To do this:
+Overview
+--------
 
-#. ``git remote rm origin`` - remove the link to the mainline repository
-#. |repo-add-fork| - add read-write link to your forked copy
-#. |repo-add-remote| - add back read-only link to the mainline |repourl| repository
+#. make a github_ account
+#. tell git_ who you are
+#. fork *nipy* repository using github_ interface
 
-Now you can follow the workflow in :ref:`development-workflow`.
+Then::
+
+   # remove read-only pointer to upstream repository
+   git remote rm origin
+   # add pointer to your own fork
+   git remote add origin git@github.com:you-user-name/nipy.git
+   # add back renamed read-only pointer to upstream
+   git remote add mainline git://github.com/gitwash/nipy.git
+   # push your branch to github
+   git checkout my-edits
+   git push origin my-edits
+
+Details
+-------
+
+Make a github_ account
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: make_account.txt
+
+Tell git_ who you are
+~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: set_user.txt
+
+Make a forked copy of nipy
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: make_fork.txt
+
+
+
+
+
+Making a patch
+==============
+
+Overview
+--------
+
+some text
+
 
 .. include:: links_names.txt
-.. include:: substitutions.txt
 
 
 

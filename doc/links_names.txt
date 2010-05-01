@@ -9,6 +9,7 @@
    nipy, NIPY, Nipy, etc...
 
 .. _nipy: http://neuroimaging.scipy.org
+.. _github-nipy: http://github.com/nipy
 .. _`Brain Imaging Center`: http://bic.berkeley.edu/
 .. _dipy: http://nipy.sourceforge.net/dipy
 .. _`dipy github`: http://github.com/Garyfallidis/dipy
@@ -34,6 +35,9 @@
 .. _msysgit: http://code.google.com/p/msysgit/downloads/list
 .. _git-osx-installer: http://code.google.com/p/git-osx-installer/downloads/list
 .. _bazaar: http://bazaar-vcs.org/
+.. _git cheat sheet: http://github.com/guides/git-cheat-sheet
+.. _pro git book: http://progit.org/
+
 
 .. Other working process
 .. _pynifti: http://niftilib.sourceforge.net/pynifti/

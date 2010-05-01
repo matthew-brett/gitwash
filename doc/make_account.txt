@@ -1,0 +1,4 @@
+If you don't have a github_ account, go to the github_ page, and make one.
+
+You then need to configure your account to allow write access - see the
+``Generating SSH keys`` help on `github help`_.

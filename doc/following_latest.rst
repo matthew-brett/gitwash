@@ -5,36 +5,36 @@
 =============================
 
 These are the instructions if you just want to follow the latest
-|reponame| source, but you don't need to do any development for now.
+*nipy* source, but you don't need to do any development for now.
 
-Get the read-only source
-========================
+The steps are:
 
-Run |repoclone-ro|
+* install git_
+* get local copy of the git repository from github_
+* update local copy from time to time
 
-You now have a copy of the code tree in the |reponame| directory.
+.. include:: install.txt
+
+Get the local copy of the code
+==============================
+
+From the command line::
+
+   git clone git://github.com/nipy/nipy.git
+
+You now have a copy of the code tree in the new ``nipy``x directory.
 
 Updating the code
 =================
 
-After you've done the initial clone, you can get the latest changes with:
+From time to time you may want to pull down the latest code.  Do this with::
 
-#. |repo-cd|
-#. ``git pull``
+   cd nipy
+   git pull
 
-The tree in |reponame| will now have the latest changes from the initial
+The tree in ``nipy`` will now have the latest changes from the initial
 repository.
 
-Editing the code
-================
+At some stage you might consider editing the code; in that case, see
+:ref:`follower-to-developer`.
 
-You may find yourself wanting to make a few changes to the code, maybe
-for a fix or changing a small feature.  If you do, then you can do this
-in your repository, by following the usual :ref:`edit-commit` cycle.
-You can still do ``git pull`` from time to time to merge the upstream
-code back into your local repository.
-
-If you find you'd like to give your changes back, then just follow the
-instructions in :ref:`follower-to-developer`.
-
-.. include:: substitutions.txt

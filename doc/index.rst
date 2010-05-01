@@ -12,10 +12,9 @@ Contents:
    :maxdepth: 2
 
    intro
-   git_setup
    following_latest
+   following_to_developing
    start_as_developer
-   development_workflow
 
 Indices and tables
 ==================

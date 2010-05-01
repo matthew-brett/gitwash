@@ -27,7 +27,11 @@ Configure
 
 Configure git_ by identifying yourself, and adding some aliases to
 common commands.  We'll use these aliases later.  You only need to do
-this once for each computer on which you will use git.  The easiest way
+this once for each computer on which you will use git.  
+
+Here we just cover the 
+
+The easiest way
 to do this, is to create a ``.gitconfig`` file in your home directory,
 with contents like this::
 
