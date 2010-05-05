@@ -1,5 +1,8 @@
-Install
-=======
+.. _install-git:
+
+=============
+ Install git
+=============
 
 See the git_ page for the most recent information.
 

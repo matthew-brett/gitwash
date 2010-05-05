@@ -9,7 +9,7 @@
    nipy, NIPY, Nipy, etc...
 
 .. _nipy: http://neuroimaging.scipy.org
-.. _github-nipy: http://github.com/nipy
+.. _`nipy github`: http://github.com/nipy
 .. _`Brain Imaging Center`: http://bic.berkeley.edu/
 .. _dipy: http://nipy.sourceforge.net/dipy
 .. _`dipy github`: http://github.com/Garyfallidis/dipy

@@ -53,7 +53,6 @@ Tell git_ who you are
 Make a forked copy of nipy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: make_fork.txt
 
 Link your local branch to github
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

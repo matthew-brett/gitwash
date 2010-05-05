@@ -12,9 +12,8 @@ Contents:
    :maxdepth: 2
 
    intro
-   following_latest
-   following_to_developing
-   start_as_developer
+   install
+   tasks
 
 Indices and tables
 ==================
