@@ -30,4 +30,3 @@
    *to your local machine*.
 
 .. include:: links_names.txt
-.. include:: substitutions.txt

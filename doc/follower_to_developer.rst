@@ -48,8 +48,6 @@ Make a github_ account
 Tell git_ who you are
 ~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: set_user.txt
-
 Make a forked copy of nipy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 

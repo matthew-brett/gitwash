@@ -13,7 +13,9 @@ Contents:
 
    intro
    install
-   tasks
+   following_latest
+   patching
+   development
 
 Indices and tables
 ==================

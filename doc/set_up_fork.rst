@@ -1,11 +1,8 @@
-.. _start-as-developer:
+.. _set-up-fork:
 
-======================================
- Starting from scratch as a developer
-======================================
-
-These are the instructions for the situation where you know that you
-want to edit the code and make your changes available to the rest of us.
+==================
+ Set up your fork
+==================
 
 First you follow the instructions for :ref:`forking`. Now:
 

@@ -50,4 +50,3 @@ If you want to delete a remote branch for some reason, see:
 http://github.com/guides/remove-a-remote-branch
 
 .. include:: links_names.txt
-.. include:: substitutions.txt
