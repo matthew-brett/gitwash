@@ -69,6 +69,21 @@ These commands will write to your user's git configuration file
 To set up on another computer, you can copy your ``~/.gitconfig`` file,
 or run the commands above.
 
+Other configuration recommended by Yarik
+========================================
+
+In your ``~/.gitconfig`` file alias section::
+
+   wdiff = diff --color-words
+
+so that ``git wdiff`` gives a nicely formatted output of the diff. 
+
+To enforce summaries when doing merges(``~/.gitconfig`` file again)::
+
+   [merge]
+      summary = true
+
+
 .. include:: links_names.txt
 
 

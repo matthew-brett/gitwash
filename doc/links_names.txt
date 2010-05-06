@@ -35,9 +35,26 @@
 .. _msysgit: http://code.google.com/p/msysgit/downloads/list
 .. _git-osx-installer: http://code.google.com/p/git-osx-installer/downloads/list
 .. _bazaar: http://bazaar-vcs.org/
+.. _subversion: http://subversion.tigris.org/
+
+.. git resources
 .. _git cheat sheet: http://github.com/guides/git-cheat-sheet
 .. _pro git book: http://progit.org/
-
+.. _git svn crash course: http://git-scm.com/course/svn.html
+.. _learn.github: http://learn.github.com/
+.. _network graph visualizer: http://github.com/blog/39-say-hello-to-the-network-graph-visualizer
+.. _git user manual: http://www.kernel.org/pub/software/scm/git/docs/user-manual.html
+.. _git tutorial: http://www.kernel.org/pub/software/scm/git/docs/gittutorial.html
+.. _git community book: http://book.git-scm.com/
+.. _git concepts: http://www.eecs.harvard.edu/~cduan/technical/git/
+.. _git clone: http://www.kernel.org/pub/software/scm/git/docs/git-clone.html
+.. _git pull: http://www.kernel.org/pub/software/scm/git/docs/git-pull.html
+.. _git add: http://www.kernel.org/pub/software/scm/git/docs/git-add.html
+.. _git stat: http://www.kernel.org/pub/software/scm/git/docs/git-stat.html
+.. _git diff: http://www.kernel.org/pub/software/scm/git/docs/git-diff.html
+.. _git log: http://www.kernel.org/pub/software/scm/git/docs/git-log.html
+.. _git branch: http://www.kernel.org/pub/software/scm/git/docs/git-branch.html
+.. _git remote: http://www.kernel.org/pub/software/scm/git/docs/git-remote.html
 
 .. Other working process
 .. _pynifti: http://niftilib.sourceforge.net/pynifti/

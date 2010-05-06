@@ -16,6 +16,7 @@ Contents:
    following_latest
    patching
    development
+   resources
 
 Indices and tables
 ==================

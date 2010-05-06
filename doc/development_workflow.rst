@@ -24,7 +24,7 @@ Generally, you will want to keep this also on your public github_ fork
 of nipy_.  To do this, you ``push`` this new branch up to your github_
 repo.  Generally (if you followed the instructions in these pages, and
 by default), git will have a link to your github_ repo, called
-``origin``.  You push up to github_ with::
+``origin``.  You push up to your own repo on github_ with::
 
    git push origin my-new-feature
 
@@ -94,6 +94,13 @@ Asking for code review
    See: http://github.com/blog/612-introducing-github-compare-view for
    more detail.
 
+The generated comparison, is between your feature branch
+``my-new-feature``, and the place in ``master`` from which you branched
+``my-new-feature``.  In other words, you can keep updating ``master``
+without interfering with the output from the comparison.  More detail?
+Note the three dots in the URL above (``master...my-new-feature``) and
+see :ref:`dot2-dot3`.
+
 Asking for merge
 ================
 
@@ -157,5 +164,50 @@ Deleting a branch on github_
 
 (Note the colon ``:`` before ``test-branch``.  See also:
 http://github.com/guides/remove-a-remote-branch
+
+Several people sharing a single repository
+==========================================
+
+If you want to work on some stuff with other people, where you are all
+committing into the same repository, or even the same branch, then just
+share it via github_.
+
+First fork nipy into your account, as from :ref:`forking`.
+
+Then, go to your forked repository github page, say
+``http://github.com/your-user-name/nipy``
+
+Click on the 'Admin' button, and add anyone else to the repo as a
+collaborator:
+
+   .. image:: pull_button.png
+
+Now all those people can do::
+
+    git clone git@githhub.com:your-user-name/nipy.git
+
+Remember that links starting with ``git@`` use the ssh protocol and are
+read-write; links starting with ``git://`` are read-only.
+
+Your collaborators can then commit directly into that repo with the
+usual::
+
+     git commit -am 'ENH - much better code'
+     git push origin master # pushes directly into your repo
+
+Exploring your repository
+=========================
+
+To see a graphical representation of the repository branches and
+commits::
+
+   gitk --all
+
+To see a linear list of commits for this branch::
+
+   git log
+
+You can also look at the `network graph visualizer`_ for your github_
+repo.
 
 .. include:: links_names.txt
