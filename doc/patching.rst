@@ -98,7 +98,7 @@ If you find you have done some patches, and you have one or more feature
 branches, you will probably want to switch to development mode.  You can
 do this with the repository you have.
 
-Fork the nipy_ repository - :ref:`forking`.  Then::
+Fork the nipy_ repository on github_ - :ref:`forking`.  Then::
 
    # checkout and refresh master branch from main repo
    git checkout master
