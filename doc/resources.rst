@@ -24,13 +24,17 @@ You can get these on your own machine with (e.g) ``git help push`` or
 (same thing) ``git push --help``, but, for convenience, here are the
 online manual pages for some common commands:
 
-* `git clone`_
-* `git pull`_
 * `git add`_
-* `git stat`_
+* `git branch`_
+* `git checkout`_
+* `git clone`_
+* `git commit`_
+* `git config`_
 * `git diff`_
 * `git log`_
-* `git branch`_
+* `git pull`_
+* `git push`_
 * `git remote`_
+* `git status`_
 
 .. include:: links_names.txt

@@ -48,13 +48,17 @@
 .. _git community book: http://book.git-scm.com/
 .. _git concepts: http://www.eecs.harvard.edu/~cduan/technical/git/
 .. _git clone: http://www.kernel.org/pub/software/scm/git/docs/git-clone.html
+.. _git checkout: http://www.kernel.org/pub/software/scm/git/docs/git-checkout.html
+.. _git commit: http://www.kernel.org/pub/software/scm/git/docs/git-commit.html
+.. _git push: http://www.kernel.org/pub/software/scm/git/docs/git-push.html
 .. _git pull: http://www.kernel.org/pub/software/scm/git/docs/git-pull.html
 .. _git add: http://www.kernel.org/pub/software/scm/git/docs/git-add.html
-.. _git stat: http://www.kernel.org/pub/software/scm/git/docs/git-stat.html
+.. _git status: http://www.kernel.org/pub/software/scm/git/docs/git-status.html
 .. _git diff: http://www.kernel.org/pub/software/scm/git/docs/git-diff.html
 .. _git log: http://www.kernel.org/pub/software/scm/git/docs/git-log.html
 .. _git branch: http://www.kernel.org/pub/software/scm/git/docs/git-branch.html
 .. _git remote: http://www.kernel.org/pub/software/scm/git/docs/git-remote.html
+.. _git config: http://www.kernel.org/pub/software/scm/git/docs/git-config.html
 
 .. Other working process
 .. _pynifti: http://niftilib.sourceforge.net/pynifti/
