@@ -84,8 +84,8 @@ Asking for code review
    .. image:: branch_list_compare.png
 
 #. If asked, select the branch names you want to compare.  Usually these
-   will be ``my-new-feature`` (where that is your feature branch name,
-   and ``master``.
+   will be ``master`` and ``my-new-feature`` (where that is your feature
+   branch name).
 #. At this point you should get a nice summary of the changes.  Copy the
    URL for this, and post it to the `nipy mailing list`_, asking for
    review.  The URL will look something like:
