@@ -100,12 +100,12 @@ do this with the repository you have.
 
 Fork the nipy_ repository - :ref:`forking`.  Then::
 
-   # rename pointer to main repository to 'mainline'
-   git remote rename origin mainline
    # checkout and refresh master branch from main repo
    git checkout master
-   git pull mainline master
-   # point your repo to read / write to your fork on github
+   git pull origin master
+   # rename pointer to main repository to 'mainline'
+   git remote rename origin mainline
+   # point your repo to default read / write to your fork on github
    git remote add origin git@github.com:your-user-name/nipy.git
    # push up any branches you've made and want to keep
    git push origin the-fix-im-thinking-of
