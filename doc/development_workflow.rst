@@ -104,18 +104,19 @@ without interfering with the output from the comparison.  More detail?
 Note the three dots in the URL above (``master...my-new-feature``) and
 see :ref:`dot2-dot3`.
 
-Asking for merge
-================
+Asking for your changes to be merged with the main repo
+=======================================================
 
 When you are ready to ask for the merge of your code:
 
-#. Goto the URL of your forked repo, say ``http://github.com/your-user-name/nipy.git``. 
+#. Go to the URL of your forked repo, say ``http://github.com/your-user-name/nipy.git``. 
 #. Click on the 'Pull request' button:
 
    .. image:: pull_button.png
 
    Enter a message; we suggest you select only ``nipy`` as the
-   recipient, but feel free to add others from the list as you like.
+   recipient.  The message will go to the `nipy mailing list`_.  Please
+   feel free to add others from the list as you like.
 
 Merging from trunk
 ==================
