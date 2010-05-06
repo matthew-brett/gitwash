@@ -8,11 +8,50 @@ You've worked out a way to fix it - even better!
 
 You want to tell us about it - best of all!
 
-Here's how.
+The easiest way is to make a *patch* or set of patches.  Here we explain
+how.  Make a patch is the simplest and quickest, but if you're going to
+be doing anything more than very simple quick things, please see the
+:ref:`git-development` pages.
 
-If you don't already have one, clone a copy of the nipy_ repository::
+Making patches
+==============
+
+Overview
+--------
+
+::
+
+   # get the repository if you don't have it
+   git clone git://github.com/nipy/nipy.git
+   # tell git who you are
+   git config --global user.email you@yourdomain.example.com
+   git config --global user.name "Your Name Comes Here"
+   # make a branch for your patching
+   git branch the-fix-im-thinking-of
+   git checkout the-fix-im-thinking-of
+   # hack, hack, hack
+   # Tell git about any new files you've made
+   git add somewhere/tests/test_my_bug.py
+   # commit work in progress as you go
+   git commit -am 'BF - added tests for Funny bug'
+   # hack hack, hack
+   git commit -am 'BF - added fix for Funny bug'
+   # make the patch files
+   git format-patch -M -C
+
+Then, send the generated patch files to the `nipy mailing list`_ - where we will thank you warmly.
+
+In detail
+---------
+
+#. If you don't already have one, clone a copy of the nipy_ repository::
 
       git clone git://github.com/nipy/nipy.git
+
+#. Tell git_ who you are so it can label the commits you've made::
+
+      git config --global user.email you@yourdomain.example.com
+      git config --global user.name "Your Name Comes Here"
 
 #. Make a 'feature branch'.  This will be where you work on your bug
    fix.  It's nice and safe and leaves you with access to an unmodified
