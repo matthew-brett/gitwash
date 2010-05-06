@@ -11,7 +11,7 @@ You want to tell us about it - best of all!
 The easiest way is to make a *patch* or set of patches.  Here we explain
 how.  Make a patch is the simplest and quickest, but if you're going to
 be doing anything more than very simple quick things, please see the
-:ref:`git-development` pages.
+:ref:`git-development` pages. 
 
 Making patches
 ==============
@@ -37,7 +37,7 @@ Overview
    # hack hack, hack
    git commit -am 'BF - added fix for Funny bug'
    # make the patch files
-   git format-patch -M -C
+   git format-patch -M -C master
 
 Then, send the generated patch files to the `nipy mailing list`_ - where we will thank you warmly.
 
@@ -74,9 +74,10 @@ In detail
 
       git status
 
-#. Finally, make your commits into patches::
+#. Finally, make your commits into patches.  You want all the commits
+   since you branched from the ``master`` branch::
 
-      git format-patch -M -C
+      git format-patch -M -C master
 
    You will now have several files named for the commits::
 
@@ -89,5 +90,26 @@ When you are done, to switch back to the main copy of the code, just
 return to the ``master`` branch::
 
    git checkout master
+
+Moving from patching to development
+===================================
+
+If you find you have done some patches, and you have one or more feature
+branches, you will probably want to switch to development mode.  You can
+do this with the repository you have.
+
+Fork the nipy_ repository - :ref:`forking`.  Then::
+
+   # rename pointer to main repository to 'mainline'
+   git remote rename origin mainline
+   # checkout and refresh master branch from main repo
+   git checkout master
+   git pull mainline master
+   # point your repo to read / write to your fork on github
+   git remote add origin git@github.com:your-user-name/nipy.git
+   # push up any branches you've made and want to keep
+   git push origin the-fix-im-thinking-of
+
+Then you can, if you want, follow the :ref:`development-workflow`.
 
 .. include:: links_names.txt
