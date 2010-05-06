@@ -23,7 +23,4 @@ Have a look at the github_ install help pages available from `github help`_
 
 There are good instructions here: http://book.git-scm.com/2_installing_git.html
 
-At the time of writing, these should work for some standard platforms:
-
-
 .. include:: links_names.txt

@@ -21,12 +21,13 @@ Overview
 
 ::
 
-   # get the repository if you don't have it
-   git clone git://github.com/nipy/nipy.git
    # tell git who you are
    git config --global user.email you@yourdomain.example.com
    git config --global user.name "Your Name Comes Here"
+   # get the repository if you don't have it
+   git clone git://github.com/nipy/nipy.git
    # make a branch for your patching
+   cd nipy
    git branch the-fix-im-thinking-of
    git checkout the-fix-im-thinking-of
    # hack, hack, hack
@@ -44,14 +45,15 @@ Then, send the generated patch files to the `nipy mailing list`_ - where we will
 In detail
 ---------
 
-#. If you don't already have one, clone a copy of the nipy_ repository::
-
-      git clone git://github.com/nipy/nipy.git
-
 #. Tell git_ who you are so it can label the commits you've made::
 
       git config --global user.email you@yourdomain.example.com
       git config --global user.name "Your Name Comes Here"
+
+#. If you don't already have one, clone a copy of the nipy_ repository::
+
+      git clone git://github.com/nipy/nipy.git
+      cd nipy
 
 #. Make a 'feature branch'.  This will be where you work on your bug
    fix.  It's nice and safe and leaves you with access to an unmodified
