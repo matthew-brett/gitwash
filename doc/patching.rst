@@ -9,9 +9,9 @@ You've worked out a way to fix it - even better!
 You want to tell us about it - best of all!
 
 The easiest way is to make a *patch* or set of patches.  Here we explain
-how.  Make a patch is the simplest and quickest, but if you're going to
-be doing anything more than very simple quick things, please see the
-:ref:`git-development` pages. 
+how.  Making a patch is the simplest and quickest, but if you're going
+to be doing anything more than simple quick things, please consider
+following the :ref:`git-development` model instead.
 
 Making patches
 ==============
