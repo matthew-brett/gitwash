@@ -69,7 +69,31 @@ In more detail
 #. To commit all modified files, do ``git commit -am 'A commit
    message'``.  Note the ``-a`` flag to ``git commit``.  This commits
    *to your local machine*.
-#. To push the changes up to your forked repo on github_, do a ``git push``.  
+#. To push the changes up to your forked repo on github_, do a ``git push``.
+
+Asking for code review
+======================
+
+#. Go to your repo URL - e.g. ``http://github.com/your-user-name/nipy``.
+#. Click on the *Branch list* button:
+
+   .. image:: branch_list.png
+
+#. Click on the *Compare* button:
+
+   .. image:: branch_list_compare.png
+
+#. If asked, select the branch names you want to compare.  Usually these
+   will be ``my-new-feature`` (where that is your feature branch name,
+   and ``master``.
+#. At this point you should get a nice summary of the changes.  Copy the
+   URL for this, and post it to the `nipy mailing list`_, asking for
+   review.  The URL will look something like:
+   ``http://github.com/your-user-name/nipy/compare/master...my-new-feature``.
+   There's an example at
+   http://github.com/matthew-brett/nipy/compare/master...find-install-data
+   See: http://github.com/blog/612-introducing-github-compare-view for
+   more detail.
 
 Asking for merge
 ================
