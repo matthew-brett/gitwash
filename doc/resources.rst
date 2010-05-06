@@ -4,7 +4,9 @@
  git_ resources
 ================
 
-* `git svn crash course`_: git_ for those of us used to subversion_
+Tutorials and summaries
+=======================
+
 * `github help`_ has an excellent series of how-to guides.
 * `learn.github`_ has an excellent series of tutorials
 * The `pro git book`_ is a good in-depth book on git. 
@@ -13,13 +15,14 @@
 * The `git tutorial`_
 * The `git community book`_ 
 * A good but technical page on `git concepts`_
+* `git svn crash course`_: git_ for those of us used to subversion_
 
 Manual pages online
 ===================
 
-You can get these on your own machine with (e.g) ``git help push``. But,
-for convenience, here are the online manual pages for some common
-commands:
+You can get these on your own machine with (e.g) ``git help push`` or
+(same thing) ``git push --help``, but, for convenience, here are the
+online manual pages for some common commands:
 
 * `git clone`_
 * `git pull`_
