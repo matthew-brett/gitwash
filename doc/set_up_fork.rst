@@ -4,10 +4,22 @@
  Set up your fork
 ==================
 
-First you follow the instructions for :ref:`forking`. Now:
+First you follow the instructions for :ref:`forking`. 
+
+Overview
+========
+
+::
+
+   git clone git@github.com/your-user-name/nipy.git
+   cd nipy
+   git remote add mainline git://github.com/nipy/nipy.git
+
+In detail
+=========
 
 Clone your fork
-===============
+---------------
 
 #. Clone your fork to the local computer with ``git clone
    git@github.com:your-user-name/nipy.git``
@@ -29,7 +41,7 @@ Clone your fork
 .. _linking-to-mainline:
 
 Linking your repository to the mainline repo
-============================================
+--------------------------------------------
 
 ::
 

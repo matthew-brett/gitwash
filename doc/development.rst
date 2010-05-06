@@ -12,5 +12,5 @@ Contents:
    forking_hell
    set_up_fork
    configure_git
-   basic_workflow
-
+   development_workflow
+   

@@ -1,7 +1,7 @@
 .. _development-workflow:
 
 ====================
-Fevelopment workflow
+Development workflow
 ====================
 
 You already have your own forked copy of the nipy_ repository, by
@@ -29,7 +29,7 @@ by default), git will have a link to your github_ repo, called
    git push origin my-new-feature
 
 From now on git_ will know that ``my-new-feature`` is related to the
-``my-new-feature`` branch in the gitub_ repo.
+``my-new-feature`` branch in the github_ repo.
 
 The editing workflow
 ====================

@@ -6,8 +6,17 @@
 
 .. _git-config-basic:
 
-Basic git configuration
-=======================
+Overview
+========
+
+::
+
+  git config --global user.email you@yourdomain.example.com
+  git config --global user.name "Your Name Comes Here"
+
+
+In detail
+=========
 
 This is to tell git_ who you are, for labeling any changes you make to
 the code.  The simplest way to do this is from the command line::
