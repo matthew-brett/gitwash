@@ -6,8 +6,8 @@
 
 .. _git-config-basic:
 
-Basic git confuration
-=====================
+Basic git configuration
+=======================
 
 This is to tell git_ who you are, for labeling any changes you make to
 the code.  The simplest way to do this is from the command line::
@@ -21,7 +21,9 @@ called ``.gitconfig`` in your home directory.
 Advanced git configuration
 ==========================
 
-You might well some aliases to common commands.
+You might well benefit from some aliases to common commands.
+
+For example, you might well want to be able to shorten ``git checkout`` to ``git co``. 
 
 The easiest way to do this, is to create a ``.gitconfig`` file in your
 home directory, with contents like this::
@@ -32,7 +34,6 @@ home directory, with contents like this::
           email = you@yourdomain.example.com
           name = Your Name Comes Here
   [alias]
-          ca = commit -a
           st = status
           stat = status
           co = checkout
@@ -47,7 +48,6 @@ line::
   git config --global core.editor emacs
   git config --global user.email you@yourdomain.example.com
   git config --global user.name "Your Name Comes Here"
-  git config --global alias.ca "commit -a" # git ca -> git commit -a
   git config --global alias.st status
   git config --global alias.stat status
   git config --global alias.co checkout

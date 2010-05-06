@@ -14,50 +14,26 @@ If you don't already have one, clone a copy of the nipy_ repository::
 
       git clone git://github.com/nipy/nipy.git
 
-For a very simple change
-========================
-
-#. Edit the code in your new ``nipy`` directory.
-#. When your edits are good, make a patch::
-
-      git diff > my_bug_fix.patch
-
-#. Send ``my_bug_fix.patch`` to the `nipy mailing list`_.
-
-That's it.
-
-To clean out the changes, resetting the working ``nipy`` tree to be the
-same as in the repository you can run ``git reset --hard`` (this will
-delete all your changes).  If you want to keep track of your changes,
-you might want to make a new branch for them::
-
-   git branch my-changes
-   git checkout my-changes
-   git commit -am 'BF - my bug fix'
-
-Then you can keep them stored in case you need them again. 
-
-For a less simple change
-========================
-
-This is a change which might need a bit of thought, and revision.  In
-this case you can use git_ to keep track of your changes as you go.
-
-#. Make a 'feature branch'::
+#. Make a 'feature branch'.  This will be where you work on your bug
+   fix.  It's nice and safe and leaves you with access to an unmodified
+   copy of the code in the main branch::
 
       git branch the-fix-im-thinking-of
       git checkout the-fix-im-thinking-of
 
 #. Do some edits, and commit them as you go::
 
-      # hack, hack
+      # hack, hack, hack
+      # Tell git about any new files you've made
+      git add somewhere/tests/test_my_bug.py
+      # commit work in progress as you go
       git commit -am 'BF - added tests for Funny bug'
-      # hack hack
+      # hack hack, hack
       git commit -am 'BF - added fix for Funny bug'
 
 #. When you have finished, check you have committed all your changes::
 
-      git stat
+      git status
 
 #. Finally, make your commits into patches::
 
@@ -69,5 +45,10 @@ this case you can use git_ to keep track of your changes as you go.
       0002-BF-added-fix-for-Funny-bug.patch
 
    Send these files to the `nipy mailing list`_.
+
+When you are done, to switch back to the main copy of the code, just
+return to the ``master`` branch::
+
+   git checkout master
 
 .. include:: links_names.txt

@@ -52,7 +52,5 @@ Just for your own satisfaction, show yourself that you now have a new
    origin	git@github.com:your-user-name/nipy.git (fetch)
    origin	git@github.com:your-user-name/nipy.git (push)
 
-You are now ready to follow the :ref:`development-workflow`.
-
 .. include:: links_names.txt
 
