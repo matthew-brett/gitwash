@@ -127,10 +127,12 @@ Deleting a branch on github_
 ::
 
    git checkout master
+   # delete branch locally
    git branch -D my-unwanted-branch
-   git 
+   # delete branch on github
+   git push origin :my-unwanted-branch
 
-If you want to delete a remote branch for some reason, see:
+(Note the colon ``:`` before ``test-branch``.  See also:
 http://github.com/guides/remove-a-remote-branch
 
 .. include:: links_names.txt
