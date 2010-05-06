@@ -66,9 +66,8 @@ In more detail
 
 #. Check what the actual changes are with ``git diff``
 #. Add any new files to version control ``git add new_file_name``
-#. To commit all modified files, do ``git commit -am 'A commit
-   message'``.  Note the ``-a`` flag to ``git commit``.  This commits
-   *to your local machine*.
+#. To commit all modified files into the local copy of your repo,, do ``git commit -am 'A commit
+   message'``.  Note the ``-a`` flag to ``git commit``. 
 #. To push the changes up to your forked repo on github_, do a ``git push``.
 
 Asking for code review
@@ -79,7 +78,7 @@ Asking for code review
 
    .. image:: branch_list.png
 
-#. Click on the *Compare* button:
+#. Click on the *Compare* button for your feature branch - here ``my-new-feature``:
 
    .. image:: branch_list_compare.png
 
