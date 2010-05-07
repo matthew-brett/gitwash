@@ -72,6 +72,10 @@ In detail
       # hack hack, hack
       git commit -am 'BF - added fix for Funny bug'
 
+   Note the ``-am`` options to ``commit``. The ``m`` flag just signals
+   that you're going to type a message on the command line.  The ``a``
+   flag - you can just take on faith - or see `why the -a flag?`_.
+
 #. When you have finished, check you have committed all your changes::
 
       git status

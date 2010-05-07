@@ -11,12 +11,12 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   intro
-   install
+   git_intro
+   git_install
    following_latest
    patching
-   development
-   resources
+   git_development
+   git_resources
 
 Indices and tables
 ==================

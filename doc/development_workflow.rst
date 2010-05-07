@@ -8,9 +8,21 @@ You already have your own forked copy of the nipy_ repository, by
 following :ref:`forking`, :ref:`set-up-fork`, and you have configured
 git_ by following :ref:`configure-git`.
 
-We recommend strongly that you start a new 'feature branch' each time to
-start a new set of edits.  It really helps when you ask for code review
-or merges later on.  It also helps keep work organized.
+Workflow summary
+================
+
+* Keep your ``master`` branch clean of edits that have not been merged
+  to the main nipy_ development repo.  Your ``master`` then will follow
+  the main nipy_ repository.
+* Start a new *feature branch* for each set of edits that you do.
+* If you can avoid it, try not to merge other branches into your feature
+  branch while you are working.
+* Ask for review!
+
+This way of working really helps to keep work well organized, and in
+keeping history as clear as possible.
+
+See - for example - `linux git workflow`_. 
 
 Making a new feature branch
 ===========================
@@ -68,8 +80,11 @@ In more detail
 #. Add any new files to version control ``git add new_file_name`` (see
    `git add`_). 
 #. To commit all modified files into the local copy of your repo,, do
-   ``git commit -am 'A commit message'``.  Note the ``-a`` flag to ``git
-   commit`` (see `git commit`_).
+   ``git commit -am 'A commit message'``.  Note the ``-am`` options to
+   ``commit``. The ``m`` flag just signals that you're going to type a
+   message on the command line.  The ``a`` flag - you can just take on
+   faith - or see `why the -a flag?`_. See also the `git commit`_ manual
+   page.
 #. To push the changes up to your forked repo on github_, do a ``git
    push`` (see `git push`). 
 
@@ -85,9 +100,9 @@ Asking for code review
 
    .. image:: branch_list_compare.png
 
-#. If asked, select the branch names you want to compare.  Usually these
-   will be ``master`` and ``my-new-feature`` (where that is your feature
-   branch name).
+#. If asked, select the *base* and *comparison* branch names you want to
+   compare.  Usually these will be ``master`` and ``my-new-feature``
+   (where that is your feature branch name).
 #. At this point you should get a nice summary of the changes.  Copy the
    URL for this, and post it to the `nipy mailing list`_, asking for
    review.  The URL will look something like:
@@ -109,7 +124,8 @@ Asking for your changes to be merged with the main repo
 
 When you are ready to ask for the merge of your code:
 
-#. Go to the URL of your forked repo, say ``http://github.com/your-user-name/nipy.git``. 
+#. Go to the URL of your forked repo, say
+   ``http://github.com/your-user-name/nipy.git``.
 #. Click on the 'Pull request' button:
 
    .. image:: pull_button.png

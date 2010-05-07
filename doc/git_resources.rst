@@ -13,9 +13,26 @@ Tutorials and summaries
 * A `git cheat sheet`_ is a page giving summaries of common commands.
 * The `git user manual`_ 
 * The `git tutorial`_
-* The `git community book`_ 
+* The `git community book`_
+* `git ready`_ - a nice series of tutorials
+* `git casts`_ - video snippets giving git how-tos.
+* `git magic`_ - extended introduction with intermediate detail
+* Fernando Perez' git page - `Fernando's git page`_ - many links and tips
 * A good but technical page on `git concepts`_
+* Th `git parable`_ is an easy read explaining the concepts behind git.
 * `git svn crash course`_: git_ for those of us used to subversion_
+
+Advanced git workflow
+=====================
+
+There are many ways of working with git_; here are some posts on the
+rules of thumb that other projects have come up with:
+
+* Linus Torvalds on `git management`_
+* Linus Torvalds on `linux git workflow`_ .  Summary; use the git tools
+  to make the history of your edits as clean as possible; merge from
+  upstream edits as little as possible in branches where you are doing
+  active development.
 
 Manual pages online
 ===================
