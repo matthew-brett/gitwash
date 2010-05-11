@@ -109,8 +109,8 @@ Fork the nipy_ repository on github_ - :ref:`forking`.  Then::
    # checkout and refresh master branch from main repo
    git checkout master
    git pull origin master
-   # rename pointer to main repository to 'mainline'
-   git remote rename origin mainline
+   # rename pointer to main repository to 'upstream'
+   git remote rename origin upstream
    # point your repo to default read / write to your fork on github
    git remote add origin git@github.com:your-user-name/nipy.git
    # push up any branches you've made and want to keep
@@ -118,4 +118,4 @@ Fork the nipy_ repository on github_ - :ref:`forking`.  Then::
 
 Then you can, if you want, follow the :ref:`development-workflow`.
 
-.. include:: links_names.txt
+.. include:: git_links.txt

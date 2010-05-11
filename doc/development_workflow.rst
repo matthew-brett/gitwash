@@ -137,7 +137,7 @@ When you are ready to ask for the merge of your code:
 Merging from trunk
 ==================
 
-This updates your code from the mainline `nipy github`_  repo. 
+This updates your code from the upstream `nipy github`_  repo. 
 
 Overview
 --------
@@ -147,9 +147,9 @@ Overview
    # go to your master branch
    git checkout master
    # pull changes from github
-   git fetch mainline
-   # merge from mainline
-   git merge mainline master
+   git fetch upstream
+   # merge from upstream
+   git merge upstream master
 
 In detail
 ---------
@@ -160,16 +160,16 @@ possible.  This makes code review easier::
 
    git checkout master
 
-Make sure you have done :ref:`linking-to-mainline`.
+Make sure you have done :ref:`linking-to-upstream`.
 
-Merge the mainline code into your current development by first pulling
-the mainline repo to a copy on your local machine::
+Merge the upstream code into your current development by first pulling
+the upstream repo to a copy on your local machine::
 
-   git fetch mainline
+   git fetch upstream
 
 then merging into your current branch::
 
-   git merge mainline/master
+   git merge upstream/master
 
 Deleting a branch on github_
 ============================
@@ -230,4 +230,4 @@ To see a linear list of commits for this branch::
 You can also look at the `network graph visualizer`_ for your github_
 repo.
 
-.. include:: links_names.txt
+.. include:: git_links.txt

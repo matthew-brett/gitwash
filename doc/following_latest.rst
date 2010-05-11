@@ -33,4 +33,4 @@ From time to time you may want to pull down the latest code.  Do this with::
 The tree in ``nipy`` will now have the latest changes from the initial
 repository.
 
-.. include:: links_names.txt
+.. include:: git_links.txt
