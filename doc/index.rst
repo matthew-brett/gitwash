@@ -1,10 +1,7 @@
-.. gitwash documentation master file, created by
-   sphinx-quickstart on Sat Apr 24 10:54:48 2010.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+.. _git-development:
 
-Welcome to gitwash's documentation!
-===================================
+Working with *nipy* source code
+===============================
 
 Contents:
 
@@ -18,10 +15,4 @@ Contents:
    git_development
    git_resources
 
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
 
