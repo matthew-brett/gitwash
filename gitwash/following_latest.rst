@@ -5,7 +5,7 @@
 =============================
 
 These are the instructions if you just want to follow the latest
-*ipython* source, but you don't need to do any development for now.
+*gitwash* source, but you don't need to do any development for now.
 
 The steps are:
 
@@ -18,19 +18,19 @@ Get the local copy of the code
 
 From the command line::
 
-   git clone git://github.com/ipython/ipython.git
+   git clone git://github.com/gitwash/gitwash.git
 
-You now have a copy of the code tree in the new ``ipython`` directory.
+You now have a copy of the code tree in the new ``gitwash`` directory.
 
 Updating the code
 =================
 
 From time to time you may want to pull down the latest code.  Do this with::
 
-   cd ipython
+   cd gitwash
    git pull
 
-The tree in ``ipython`` will now have the latest changes from the initial
+The tree in ``gitwash`` will now have the latest changes from the initial
 repository.
 
 .. include:: git_links.txt

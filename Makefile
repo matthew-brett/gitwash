@@ -30,12 +30,6 @@ help:
 clean:
 	-rm -rf $(BUILDDIR)/*
 
-for-nipy:
-	perl -pi -e 's/ipython/nipy/g' *.rst
-
-for-ipython:
-	perl -pi -e 's/nipy/ipython/g' *.rst
-
 html:
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo

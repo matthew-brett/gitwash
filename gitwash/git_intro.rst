@@ -3,10 +3,10 @@
 ==============
 
 This is a small project to describe a git_ and github_ workflow for the
-ipython_ project.
+gitwash_ project.
 
 There are several different workflows here, for different ways of
-working with *ipython*.
+working with *gitwash*.
 
 This is not a comprehensive git_ reference, it's just a workflow for our
 own project.  It's tailored to the github_ hosting service. You may well

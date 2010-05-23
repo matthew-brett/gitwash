@@ -4,7 +4,7 @@
 Development workflow
 ====================
 
-You already have your own forked copy of the ipython_ repository, by
+You already have your own forked copy of the gitwash_ repository, by
 following :ref:`forking`, :ref:`set-up-fork`, and you have configured
 git_ by following :ref:`configure-git`.
 
@@ -12,8 +12,8 @@ Workflow summary
 ================
 
 * Keep your ``master`` branch clean of edits that have not been merged
-  to the main ipython_ development repo.  Your ``master`` then will follow
-  the main ipython_ repository.
+  to the main gitwash_ development repo.  Your ``master`` then will follow
+  the main gitwash_ repository.
 * Start a new *feature branch* for each set of edits that you do.
 * If you can avoid it, try not to merge other branches into your feature
   branch while you are working.
@@ -33,7 +33,7 @@ Making a new feature branch
    git checkout my-new-feature
 
 Generally, you will want to keep this also on your public github_ fork
-of ipython_.  To do this, you `git push`_ this new branch up to your github_
+of gitwash_.  To do this, you `git push`_ this new branch up to your github_
 repo.  Generally (if you followed the instructions in these pages, and
 by default), git will have a link to your github_ repo, called
 ``origin``.  You push up to your own repo on github_ with::
@@ -91,7 +91,7 @@ In more detail
 Asking for code review
 ======================
 
-#. Go to your repo URL - e.g. ``http://github.com/your-user-name/ipython``.
+#. Go to your repo URL - e.g. ``http://github.com/your-user-name/gitwash``.
 #. Click on the *Branch list* button:
 
    .. image:: branch_list.png
@@ -104,11 +104,11 @@ Asking for code review
    compare.  Usually these will be ``master`` and ``my-new-feature``
    (where that is your feature branch name).
 #. At this point you should get a nice summary of the changes.  Copy the
-   URL for this, and post it to the `ipython mailing list`_, asking for
+   URL for this, and post it to the `gitwash mailing list`_, asking for
    review.  The URL will look something like:
-   ``http://github.com/your-user-name/ipython/compare/master...my-new-feature``.
+   ``http://github.com/your-user-name/gitwash/compare/master...my-new-feature``.
    There's an example at
-   http://github.com/matthew-brett/ipython/compare/master...find-install-data
+   http://github.com/matthew-brett/gitwash/compare/master...find-install-data
    See: http://github.com/blog/612-introducing-github-compare-view for
    more detail.
 
@@ -125,19 +125,19 @@ Asking for your changes to be merged with the main repo
 When you are ready to ask for the merge of your code:
 
 #. Go to the URL of your forked repo, say
-   ``http://github.com/your-user-name/ipython.git``.
+   ``http://github.com/your-user-name/gitwash.git``.
 #. Click on the 'Pull request' button:
 
    .. image:: pull_button.png
 
-   Enter a message; we suggest you select only ``ipython`` as the
-   recipient.  The message will go to the `ipython mailing list`_.  Please
+   Enter a message; we suggest you select only ``gitwash`` as the
+   recipient.  The message will go to the `gitwash mailing list`_.  Please
    feel free to add others from the list as you like.
 
 Merging from trunk
 ==================
 
-This updates your code from the upstream `ipython github`_  repo. 
+This updates your code from the upstream `gitwash github`_  repo. 
 
 Overview
 --------
@@ -192,10 +192,10 @@ If you want to work on some stuff with other people, where you are all
 committing into the same repository, or even the same branch, then just
 share it via github_.
 
-First fork ipython into your account, as from :ref:`forking`.
+First fork gitwash into your account, as from :ref:`forking`.
 
 Then, go to your forked repository github page, say
-``http://github.com/your-user-name/ipython``
+``http://github.com/your-user-name/gitwash``
 
 Click on the 'Admin' button, and add anyone else to the repo as a
 collaborator:
@@ -204,7 +204,7 @@ collaborator:
 
 Now all those people can do::
 
-    git clone git@githhub.com:your-user-name/ipython.git
+    git clone git@githhub.com:your-user-name/gitwash.git
 
 Remember that links starting with ``git@`` use the ssh protocol and are
 read-write; links starting with ``git://`` are read-only.
