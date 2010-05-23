@@ -1,6 +1,6 @@
 .. _using-git:
 
-Working with *nipy* source code
+Working with *ipython* source code
 ===============================
 
 Contents:
