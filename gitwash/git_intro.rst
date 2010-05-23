@@ -2,11 +2,11 @@
  Introduction
 ==============
 
-This is a small project to describe a git_ and github_ workflow for the
-gitwash_ project.
+These pages describe a git_ and github_ workflow for the PROJECTNAME_
+project.
 
 There are several different workflows here, for different ways of
-working with *gitwash*.
+working with *PROJECTNAME*.
 
 This is not a comprehensive git_ reference, it's just a workflow for our
 own project.  It's tailored to the github_ hosting service. You may well

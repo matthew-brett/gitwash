@@ -11,9 +11,9 @@ Overview
 
 ::
 
-   git clone git@github.com/your-user-name/gitwash.git
-   cd gitwash
-   git remote add upstream git://github.com/gitwash/gitwash.git
+   git clone git@github.com/your-user-name/REPONAME.git
+   cd REPONAME
+   git remote add upstream git://github.com/REPONAME/REPONAME.git
 
 In detail
 =========
@@ -22,8 +22,8 @@ Clone your fork
 ---------------
 
 #. Clone your fork to the local computer with ``git clone
-   git@github.com:your-user-name/gitwash.git``
-#. Investigate.  Change directory to your new repo: ``cd gitwash``. Then
+   git@github.com:your-user-name/REPONAME.git``
+#. Investigate.  Change directory to your new repo: ``cd REPONAME``. Then
    ``git branch -a`` to show you all branches.  You'll get something
    like::
 
@@ -35,7 +35,7 @@ Clone your fork
    What remote repository is ``remote/origin``? Try ``git remote -v`` to
    see the URLs for the remote.  They will point to your github_ fork.
 
-   Now you want to connect to the upstream `gitwash github`_ repository, so
+   Now you want to connect to the upstream `PROJECTNAME github`_ repository, so
    you can merge in changes from trunk.
 
 .. _linking-to-upstream:
@@ -45,11 +45,11 @@ Linking your repository to the upstream repo
 
 ::
 
-   cd gitwash
-   git remote add upstream git://github.com/gitwash/gitwash.git
+   cd REPONAME
+   git remote add upstream git://github.com/REPONAME/REPONAME.git
 
 ``upstream`` here is just the arbitrary name we're using to refer to the
-main gitwash_ repository at `gitwash github`_.
+main PROJECTNAME_ repository at `PROJECTNAME github`_.
 
 Note that we've used ``git://`` for the URL rather than ``git@``.  The
 ``git://`` URL is read only.  This means we that we can't accidentally
@@ -59,10 +59,10 @@ use it to merge into our own code.
 Just for your own satisfaction, show yourself that you now have a new
 'remote', with ``git remote -v show``, giving you something like::
 
-   upstream	git://github.com/gitwash/gitwash.git (fetch)
-   upstream	git://github.com/gitwash/gitwash.git (push)
-   origin	git@github.com:your-user-name/gitwash.git (fetch)
-   origin	git@github.com:your-user-name/gitwash.git (push)
+   upstream	git://github.com/REPONAME/REPONAME.git (fetch)
+   upstream	git://github.com/REPONAME/REPONAME.git (push)
+   origin	git@github.com:your-user-name/REPONAME.git (fetch)
+   origin	git@github.com:your-user-name/REPONAME.git (push)
 
 .. include:: git_links.txt
 

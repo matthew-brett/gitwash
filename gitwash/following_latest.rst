@@ -5,7 +5,7 @@
 =============================
 
 These are the instructions if you just want to follow the latest
-*gitwash* source, but you don't need to do any development for now.
+*PROJECTNAME* source, but you don't need to do any development for now.
 
 The steps are:
 
@@ -18,19 +18,19 @@ Get the local copy of the code
 
 From the command line::
 
-   git clone git://github.com/gitwash/gitwash.git
+   git clone git://github.com/REPONAME/REPONAME.git
 
-You now have a copy of the code tree in the new ``gitwash`` directory.
+You now have a copy of the code tree in the new ``REPONAME`` directory.
 
 Updating the code
 =================
 
 From time to time you may want to pull down the latest code.  Do this with::
 
-   cd gitwash
+   cd REPONAME
    git pull
 
-The tree in ``gitwash`` will now have the latest changes from the initial
+The tree in ``REPONAME`` will now have the latest changes from the initial
 repository.
 
 .. include:: git_links.txt
