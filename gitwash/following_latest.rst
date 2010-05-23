@@ -18,7 +18,7 @@ Get the local copy of the code
 
 From the command line::
 
-   git clone git://github.com/REPONAME/REPONAME.git
+   git clone git://github.com/MAIN_GH_USER/REPONAME.git
 
 You now have a copy of the code tree in the new ``REPONAME`` directory.
 
