@@ -23,7 +23,6 @@ def clone_repo(url, branch):
         call(cmd, shell=True)
         os.chdir(tmpdir)
         cmd = 'git checkout %s' % branch
-        print cmd
         call(cmd, shell=True)
     except:
         shutil.rmtree(tmpdir)

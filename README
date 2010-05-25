@@ -19,13 +19,13 @@ Gitwash is one way of solving this problem.
 * The project name in this repo is ``PROJECTNAME`` (e.g. ``IPython``),
   the repository name is ``REPONAME`` (e.g. ``ipython``) and the main
   github user (the user for the central github repository) is
-  ``MAIN_GH_USER`` (e.g. ``ipython``).
+  ``MAIN_GH_USER`` (e.g. ``fperez``).
 * The script ``gitwash_dumper.py`` will checkout the gitwash repository,
   do a search and replace on these strings and replace them with the
   ones you want, and then output these into your own docs in a place
   that you choose.  An example command for *ipython* might be::
 
-     gitwash_dumper.py docs/devel IPython ipython ipython
+     gitwash_dumper.py doc/devel IPython ipython fperez
 
   to dump the search / replaced docs into the ``doc/devel/gitwash``
   directory.
@@ -38,5 +38,5 @@ Gitwash is one way of solving this problem.
   Makefile, we have::
 
      gitwash-update:
-	python ../tools/gitwash_dumper.py devel/guidelines nipy
+        python ../tools/gitwash_dumper.py devel/guidelines nipy nipy nipy
 
