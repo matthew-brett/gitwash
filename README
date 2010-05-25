@@ -16,23 +16,35 @@ Gitwash is one way of solving this problem.
 * You can build the gitwash documents directly to review your workflow.
 * The documents designed for re-use in different projects are in the
   ``gitwash`` subdirectory.
-* The project name in this repo is ``PROJECTNAME`` (e.g. ``IPython``),
-  the repository name is ``REPONAME`` (e.g. ``ipython``) and the main
-  github user (the user for the central github repository) is
-  ``MAIN_GH_USER`` (e.g. ``fperez``).
+* In these documents, we've encoded the various strings you will want to
+  replace with strings in ALL CAPS.  The ``PROJECTNAME`` is the name of
+  the project as it appears in text - for example ``IPython``.
+  ``REPONAME`` is the name of the repository (e.g ``ipython``), and
+  ``MAIN_GH_USER`` is the main github user (the user for the central
+  github repository).  This results in links to your project
+  repository of the form ``github.com/MAIN_GH_USER/REPONAME.git``.
 * The script ``gitwash_dumper.py`` will checkout the gitwash repository,
   do a search and replace on these strings and replace them with the
   ones you want, and then output these into your own docs in a place
-  that you choose.  An example command for *ipython* might be::
+  that you choose.  For IPython, ``PROJECTNAME`` is 'IPython',
+  ``REPONAME`` is 'ipython', and the ``MAIN_GH_USER`` is also 'ipython'.
+  An example command for *ipython* might then be::
 
-     gitwash_dumper.py doc/devel IPython ipython fperez
+     gitwash_dumper.py doc/devel IPython ipython ipython
 
   to dump the search / replaced docs into the ``doc/devel/gitwash``
   directory.
 * When defining your own project, you will need to fill out the links
   for your project in the file ``gitwash/git_links.txt`` - see the
   examples for ``nipy`` and ``ipython`` - just append under there with
-  your equivalents.
+  your equivalents.  For example, if your ``PROJECTNAME, REPONAME,
+  MAIN_GH_USER`` are 'my_project', 'my_repo', 'my_user', then you would
+  want to add these link targets::
+
+     .. _my_project: http://site-for-your-project.org
+     .. _`my_project github`: http://github.com/my_user/my_repo
+     .. _`my_project mailing list`: http://link-to-your-mailing.list
+
 * You might want to have a Makefile target to update gitwash
   automatically from the sources.  For example, in the *nipy* docs
   Makefile, we have::
