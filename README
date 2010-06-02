@@ -9,7 +9,8 @@ Our idea is that many projects may have the same workflow, more or less.
 Each project needs docs that have exact project-specific command lines
 for use with git and github.
 
-It seems a shame to type all this out for every project, when a lot of it is the same. 
+It seems a shame to type all this out for every project, when a lot of
+it is the same.
 
 Gitwash is one way of solving this problem.  
 
@@ -30,7 +31,7 @@ Gitwash is one way of solving this problem.
   ``REPONAME`` is 'ipython', and the ``MAIN_GH_USER`` is also 'ipython'.
   An example command for *ipython* might then be::
 
-     gitwash_dumper.py doc/devel IPython ipython ipython
+     gitwash_dumper.py doc/devel IPython --repo-name=ipython --github-user=ipython
 
   to dump the search / replaced docs into the ``doc/devel/gitwash``
   directory.
@@ -50,5 +51,5 @@ Gitwash is one way of solving this problem.
   Makefile, we have::
 
      gitwash-update:
-        python ../tools/gitwash_dumper.py devel/guidelines nipy nipy nipy
+        python ../tools/gitwash_dumper.py devel/guidelines nipy
 
