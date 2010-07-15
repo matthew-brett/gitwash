@@ -84,6 +84,6 @@ To enforce summaries when doing merges(``~/.gitconfig`` file again)::
       summary = true
 
 
-.. include:: git_links.txt
+.. include:: git_links.inc
 
 

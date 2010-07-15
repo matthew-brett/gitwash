@@ -120,4 +120,4 @@ Fork the PROJECTNAME_ repository on github_ - :ref:`forking`.  Then::
 
 Then you can, if you want, follow the :ref:`development-workflow`.
 
-.. include:: git_links.txt
+.. include:: git_links.inc

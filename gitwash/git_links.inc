@@ -20,10 +20,10 @@
 
 .. ipython
 .. _ipython: http://ipython.scipy.org
-.. _`ipython github`: http://github.com/ipython
+.. _`ipython github`: http://github.com/ipython/ipython
 .. _`ipython mailing list`: http://mail.scipy.org/mailman/listinfo/IPython-dev
 
-.. nipy
+.. dipy
 .. _dipy: http://nipy.org/dipy
 .. _`dipy github`: http://github.com/Garyfallidis/dipy
 .. _`dipy mailing list`: http://mail.scipy.org/mailman/listinfo/nipy-devel
