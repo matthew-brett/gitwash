@@ -22,8 +22,9 @@ Gitwash is one way of solving this problem.
   the project as it appears in text - for example ``IPython``.
   ``REPONAME`` is the name of the repository (e.g ``ipython``), and
   ``MAIN_GH_USER`` is the main github user (the user for the central
-  github repository).  This results in links to your project
-  repository of the form ``github.com/MAIN_GH_USER/REPONAME.git``.
+  github repository - or the name of the github "organization").  This
+  results in links to your project repository of the form
+  ``github.com/MAIN_GH_USER/REPONAME.git``.
 * The script ``gitwash_dumper.py`` will checkout the gitwash repository,
   do a search and replace on these strings and replace them with the
   ones you want, and then output these into your own docs in a place
@@ -53,3 +54,5 @@ Gitwash is one way of solving this problem.
      gitwash-update:
         python ../tools/gitwash_dumper.py devel/guidelines nipy
 
+nipy is one example of gitwash in use:
+http://nipy.org/devel/devel/guidelines/gitwash/index.html
