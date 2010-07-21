@@ -69,8 +69,8 @@ These commands will write to your user's git configuration file
 To set up on another computer, you can copy your ``~/.gitconfig`` file,
 or run the commands above.
 
-Other configuration recommended by Yarik
-========================================
+Other recommended configurations
+================================
 
 In your ``~/.gitconfig`` file alias section::
 
