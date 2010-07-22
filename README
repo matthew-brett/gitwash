@@ -55,4 +55,4 @@ Gitwash is one way of solving this problem.
         python ../tools/gitwash_dumper.py devel/guidelines nipy
 
 nipy is one example of gitwash in use:
-http://nipy.org/devel/devel/guidelines/gitwash/index.html
+http://nipy.org/nipy/stable/devel/guidelines/gitwash/index.html
