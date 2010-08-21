@@ -40,7 +40,8 @@ by default), git will have a link to your github_ repo, called
 
    git push origin my-new-feature
 
-In git >1.7 this would actually look like this::
+In git >1.7 you can ensure that the link is correctly set by using the
+``--set-upstream`` option::
 
    git push --set-upstream origin my-new-feature
    

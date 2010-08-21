@@ -11,7 +11,7 @@ Overview
 
 ::
 
-   git clone git@github.com/your-user-name/REPONAME.git
+   git clone git@github.com:your-user-name/REPONAME.git
    cd REPONAME
    git remote add upstream git://github.com/MAIN_GH_USER/REPONAME.git
 
