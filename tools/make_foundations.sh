@@ -1,4 +1,4 @@
-rm -rf ourproject
+rm -rf ourproject evesproject
 mkdir ourproject
 cd ourproject
 touch README
@@ -16,6 +16,7 @@ zip -r .ahole/year0-jan-01/files.zip *
 
 tree -A -t -a .
 
+sleep 5
 # day two
 echo "A small early project" >> README
 mkdir .ahole/year0-jan-02
@@ -23,6 +24,7 @@ zip -r .ahole/year0-jan-02/files.zip *
 
 tree -A -t -a .
 
+sleep 5
 # day three
 # Eve
 cd ..
@@ -38,3 +40,14 @@ echo "# setup for our project" >> setup.py
 mkdir .ahole/year0-jan-03
 zip -r .ahole/year0-jan-03/files.zip *
 tree -A -t -a .
+
+cd ..
+python tools/make_foundations_helpers.py
+
+cd ourproject
+tree -Aat .
+cat .ahole/5d89f8/info.txt
+
+cd ../evesproject
+tree -Aat .
+cat .ahole/0a01a0/info.txt

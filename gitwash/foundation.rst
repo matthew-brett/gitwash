@@ -61,9 +61,9 @@ I do some more work.   I save it into the repository, at the end of the day::
 
     .
     ├── .ahole
-    │   ├── year0-jan-01
+    │   ├── year0-jan-02
     │   │   └── files.zip
-    │   └── year0-jan-02
+    │   └── year0-jan-01
     │       └── files.zip
     ├── README
     ├── setup.py
@@ -86,67 +86,127 @@ code (reconstructs my working tree) with something like::
 and now she's got the same working tree as me.  She does some fine work.  At
 the end of the day, she commits her changes the same way I do::
 
-    tar cvf .ahole/2010-08-30.tar.gz *
+    mkdir .ahole/year0-jan-03
+    zip -r .ahole/year0-jan-03/files.zip *
 
 but Eve is smart, and she immediately realizes that both of us will have a
-commit file ``.ahole/2010-08-30.tar.gz`` - but they will be different.   The
-two of us are a little tired after all our work, and we meet for a beer.
-After talking it through, we decide to change the way we name our commits,
-from using the date, to using some unique random number.  So now, my
-repository will look like this::
+commit directory ``.ahole/year0-jan-03`` - but they will have different
+contents.   If she later wants to share work with me, that could get confusing.
 
+The two of us are a little tired after all our work, and we meet for a beer.  We
+talk about it for a while.  At first we think we can just add the time to the
+date, because that's likely to be unique for each of us.  Then we realize that
+that's going to get messy too, because, if Eve does a commit on her computer,
+then I do a commit on mine, and she does another one on hers, the times will say
+that these are all in one sequence, but in fact there are two sequences, mine,
+and Eves.  We need some other way to keep track of the sequence of commits, that
+will work even if two of us are working independently.   
+
+In the end we decide that we are going to give the commits some unique identifer
+string instead of the date.   We'll store the contents of the working tree in
+the same way, as ``files.zip``, but we'll add a new file to each commit, called
+``info.txt`` that will tell us who did the commit, and when, and, most
+importantly, what the previous commit was.  We'll call the previous commit the
+*parent*.  
+
+Before our conversation, my directory looked like this::
+
+    .
     ├── .ahole
-    │   ├── 37445.tar.gz
-    │   ├── 44586.tar.gz
-    │   └── 66374.tar.gz
+    │   ├── year0-jan-03
+    │   │   └── files.zip
+    │   ├── year0-jan-02
+    │   │   └── files.zip
+    │   └── year0-jan-01
+    │       └── files.zip
+    ├── setup.py
+    ├── README
+    └── tinyproject
+        ├── __init__.py
+        └── tinymodule.py
 
-and Eve's will look like this::
+but now we've worked out the new way, it looks like this::
 
+    .
     ├── .ahole
-    │   ├── 37445.tar.gz
-    │   ├── 44586.tar.gz
-    │   └── 79272.tar.gz
+    │   ├── 5d89f8
+    │   │   ├── info.txt
+    │   │   └── files.zip
+    │   ├── 7ef41f
+    │   │   ├── info.txt
+    │   │   └── files.zip
+    │   └── 6438a4
+    │       ├── info.txt
+    │       └── files.zip
+    ├── setup.py
+    ├── README
+    └── tinyproject
+        ├── __init__.py
+        └── tinymodule.py
 
-where ``66374.tar.gz`` was my working tree as of today, and ``79272.tar.gz`` is
-Eve's.  We immediately realize that we're going to run into trouble though,
-because previously, we had the date to tell us the order of the commits. Now,
-we've just got a random number, so we need some way to store the commit
-sequence.  We decide to modify the nature of the stored commit.   What we will
-do is make the commit be the combination of 1) the files in the working
-directory and also 2) some information about the commit, like the date, who did
-it, and what the previous commit was.  The information about the previous commit
-will tell us the commit sequence. So, when we make a commit, it's going to look
-a little bit like this::
+and ``.ahole/5d89f8/info.txt`` looks like this::
 
-   tar cvf files.tar.gz *
-   
-then we make a text file called ``info.txt`` that looks like this::
+    committer = Adam
+    date = year0-jan-03
+    parent = 7ef41f
+    message = Third day
 
-   Committer = 'Adam'
-   Date = '2010-08-30'
-   Parent = '22586'
-   Message = 'Some useful work I did on the third day'
+Meanwhile, Eve's directory looks like this::
 
-and we make a new unique random number - let's say it turns out to be '66374'.
-Then we make the commit like this::
+    .
+    ├── .ahole
+    │   ├── 0a01a0
+    │   │   ├── info.txt
+    │   │   └── files.zip
+    │   ├── 7ef41f
+    │   │   ├── info.txt
+    │   │   └── files.zip
+    │   └── 6438a4
+    │       ├── info.txt
+    │       └── files.zip
+    ├── README
+    ├── setup.py
+    └── tinyproject
+        ├── __init__.py
+        └── tinymodule.py
 
-   tar cvf .ahole/66374.tar.gz files.tar.gz info.txt
+and Eve's ``.ahole/0a01a0/info.txt`` looks like this::
+
+    committer = Eve
+    date = year0-jan-03
+    parent = 7ef41f
+    message = Eve day 3
 
 After a little thought, Eve and I realize that, when we make our new commit, we
 are going to have to know what the current commit is, so we can use that as the
 parent of the new commit.  So, when we make a new commit, we store the commit
-number in a file.  We'll call this file ``.ahole/HEAD``, so, after the commit
-above, the file ``.ahole/HEAD`` will have the contents ``66374``. So,
+identifier in a file.  We'll call this file ``.ahole/HEAD``, so, after my last commit
+above, the file ``.ahole/HEAD`` will have the contents ``5d89f8``. So,
 ``.ahole/HEAD`` identifies the last (current) commit.  And of course, when we
 make a new commit, we can get the parent of the new commit, from the current
-commit in ``.ahole/HEAD``. And then, when we want to go back to an earlier
-state of the code, we can do a *checkout*, by::
+commit in ``.ahole/HEAD``. 
 
-   tar zxf .ahole/44586.tar.gz
-   tar zxf files.tar.gz 
-   rm files.tar.gz
+So now, we have a new procedure for our commit.  In outline it looks like this::
 
-and then we just put '44586' into ``.ahole/HEAD``. 
+   def ahole_commit(message):
+       # make unique identifier for this commit => UID
+       # Make a directory with name UID in '.ahole' => .ahole/$UID
+       # Make an archive of the current working tree in .ahole/$UID/files.zip
+       # Get previous (parent) commit id from .ahole/HEAD => HEAD
+       # Make .ahole/$UID/info.txt with parent set to HEAD
+       # Set .ahole/HEAD to contain UID
+
+And then, when we want to go back to an earlier state of the code, we can do a
+*checkout*, with something like::
+
+   def ahole_checkout(commit_id):
+      # clear the current working tree
+      # unpack .ahole/$commit_id/files.zip into working tree
+      # make .ahole/HEAD contain $commit_id
+
+So, when we run ``ahole_checkout('7ef41f`)`` we will get the copy of the working
+tree corresponging to ``7ef41f``, and ``.ahole/HEAD`` will just contain the
+string ``7ef41f``. 
 
 In our excitement, we immediately realize that it's really easy to see the
 history of the code now.  We can easily fetch out ``info.txt`` from the current
@@ -169,13 +229,13 @@ Reference
 
 So, ``.ahole/HEAD`` is a reference - the current commit.  But what if I
 decide that I want to do a release of some code?  Let's say I want to release
-the code in ``.ahole/44586.tar.gz`` as 'release-0.1'.   I'm going to send
+the code in ``.ahole/7ef41f/files.zip`` as 'release-0.1'.   I'm going to send
 this out to all my friends (to be honest, I don't have many friends just yet,
 but still).  I want to be able to remember what version of the code I sent out.
 I can make a *reference* to this commit.  I'll call this a *tag*.   I make a new
 directory in ``.ahole`` called ``refs``, and another directory in ``refs``,
 called ``tags``, and then, in ``.ahole/refs/tags/release-0.1`` I just put
-'44586' - a reference to the release commit.   That way, if I ever need to go
+'7ef41f' - a reference to the release commit.   That way, if I ever need to go
 back to the code I released, I just have to read the ``release-0.1`` file to
 find the commit, and then checkout that commit. 
 
@@ -186,42 +246,70 @@ working on before.
 Let's store that in another reference.  Let's use the name 'master' for my main
 line of development.  I store where this is, by making a new file
 ``.ahole/refs/heads/master`` that is a reference to the last commit.  It just
-contains the text '66374'.  So that I know that I am working on 'master', I make
-``.ahole/HEAD`` have the text ``ref: refs/heads/master``.  Now, when I make a
-new commit, I check ``.ahole/HEAD``, see that I'm working on 'master', then I
-make a new commit in the usual way.  Specifically, I make a new random number -
-say '41607' and make the ``info.txt`` file, and then::
+contains the text '5d89f8'.  So that I know that I am working on 'master', I
+make ``.ahole/HEAD`` have the text ``ref: refs/heads/master``.  Now, when I make
+a new commit, I first check ``.ahole/HEAD``; if I see ``ref:
+refs/heads/master``, then first, I get the commit id in
+``.ahole/refs/heads/master`` - and I use that as the parent id for the commit.
+When I've save the new commit, I set ``.ahole/refs/heads/master`` to have the
+new commit id.  So, I need to modify my commit procedure slightly::
 
-   tar cvf files.tar.gz *
-   tar cvf .ahole/41607.tar.gz files.tar.gz info.txt
+   def ahole_commit(message):
+       # make unique identifier for this commit => UID
+       # Make a directory with name UID in '.ahole' => .ahole/$UID
+       # Make an archive of the current working tree in .ahole/$UID/files.zip
+       # Check if .ahole/HEAD begins with 'ref: refs/head'
+       # If Yes: read parent ID from file pointed to by .ahole/HEAD -> HEAD_ID 
+       #    Make .ahole/$UID/info.txt with parent set to HEAD_ID
+       #    Replace text in reference file with UID
+       # If No: Get previous (parent) commit id from .ahole/HEAD => HEAD_ID
+       #    Make .ahole/$UID/info.txt with parent set to HEAD_ID
+       #    Set .ahole/HEAD to contain UID
 
-Finally, I update ``.ahole/refs/heads/master`` to contain ``41607``.  That
-way, we keep track of which commit we are on, by constantly updating 'master'.
+So, let's say that I'm currently on commit '5d89f8'.  ``.ahole/HEAD`` contains
+``ref: refs/heads/master``.  ``.ahole/refs/heads/master`` contains ``5d89f8``.
+I run my commit procedure::
+
+   ahole_commit('Night follows day')
+
+The commit prodedure has made a new commit 'dfbeda'; ``.ahole/HEAD`` continues
+to have text ``ref: refs/heads/master``, but now ``.ahole/refs/heads/master``
+contains ``dfbeda``.  In this way, we keep track of which commit we are on, by
+constantly updating 'master'.
 
 Ok - now let's return to me checking out the release code.  I first get the
-contents of ``.ahole/refs/tags/release-0.1`` - it's '66374'.  Then I checkout
-the working tree for that code::
+contents of ``.ahole/refs/tags/release-0.1`` - it's '5d89f8'.  Then I checkout
+the working tree for that code, using my nice ``ahole_checkout`` procedure::
 
-   tar zxf .ahole/66374.tar.gz
-   tar zxf files.tar.gz 
-   rm files.tar.gz
+    ahole_checkout('5d89f8')
 
-Then I make ``.ahole/HEAD`` contain the text ``66374``.  
+The checkout procedure will make ``.ahole/HEAD`` contain the text ``5d89f8``.  
 
-Why don't I put ``ref: refs/tags/release-0.1`` into ``.ahole/HEAD``?
-Because, if I do a commit, I don't want to update ``refs/tags/release-0.1``.
-``release-0.1`` contains the exact commit I released - I need to know it was
-that one, even if I do more development on top of it.  So, to prevent the tag
-getting changed, I just make ``.ahole/HEAD`` have a commit number [#detached]_ .
+Now I want to go back to working on my current code.  That's the code pointed to
+by ``.ahole/refs/heads/master``.  Of course, I can I check the contents of
+``.ahole/refs/heads/master`` - it is ``dfbeda``.  Then I get the code with my
+normal checkout procedure::
 
-Now I want to go back to working on my current code.   I check the contents of
-``.ahole/refs/heads/master`` - it is ``41607``.  Then I get the code::
+    ahole_checkout('dfbeda')
 
-   tar zxf .ahole/41607.tar.gz
-   tar zxf files.tar.gz 
-   rm files.tar.gz
+Finally, I'll have to set ``.ahole/HEAD`` to be ``ref: refs/heads/master``.  All
+good.
 
-Then I set ``.ahole/HEAD`` to be ``ref: refs/heads/master``.   Off I go.
+Of course, I could automate this, by modifying my checkout procedure slightly::
+
+   def ahole_checkout(refspec):
+      # If $refspec is a file in .ahole/refs/heads then:
+      #    # This is a reference
+      #    Get commit ID from .ahole/refs/heads/$refspec -> UID
+      # Else
+      #    # This is a bare ID string
+      #    Set $refspec -> UID 
+      # clear the current working tree
+      # unpack .ahole/$UID/files.zip into working tree
+      # If $refspec was a reference:
+      #    write ``ref: refs/heads/$refspec`` into .ahole/HEAD
+      # else: # just a bare ID passed   
+      #    make .ahole/HEAD contain $commit_id
 
 What then, is the difference, between a *tag* - like our release - and the
 moving target like 'master'?  The 'tag' is a *static* reference - it does not
@@ -232,8 +320,7 @@ Head
     A head is a reference that updates when we do a commit
 
 My head is hurting a little, after Eve explains all this, but after a little
-while and a nice apple pie, I'm feeling positive about this ``version`` we're
-making.
+while and a nice apple pie, I'm feeling positive about ``ahole``.
 
 On the fifth day - branches
 ===========================
@@ -252,15 +339,14 @@ I'll do it like this::
    cp .ahole/refs/tags/release-0.1 .ahole/refs/heads/working-on-0.1
 
 Then, I look at what commit ``working-on-0.1`` contains - of course it's
-``44586``.  I get the code::
+``7ef41f``.  I get the code with my new checkout procedure::
 
-   tar zxf .ahole/44586.tar.gz
-   tar zxf files.tar.gz 
-   rm files.tar.gz
+    ahole_checkout('working-on-0.1')
 
-and I set ``.ahole/HEAD`` to be ``ref: refs/heads/working-on-0.1``.  Now,
-when I do a commit, I'll update the file ``.ahole/refs/heads/working-on-0.1``
-to have the new commit number.  And off I go.
+This changes ``.ahole/HEAD`` to be ``ref: refs/heads/working-on-0.1``.  Now,
+when I do a commit with ``ahole_commit``,  that will update the file
+``.ahole/refs/heads/working-on-0.1`` to have the new commit identifier.  Despite the
+apple pie being a bit bitter last night, we're feeling good.
 
 As we think about this, we come to think of 'master' and 'working-on-0.1' as
 *branches* - because they can each be thought of as identifying a tree or graph
@@ -270,10 +356,14 @@ starting at the current position of 'master', all I need to do is::
 
    cp .ahole/refs/tags/master .ahole/refs/heads/my-new-branch
 
-Of course, then, if I want to work on this branch, I need to check it out, by
-getting the commit number in ``.ahole/refs/heads/my-new-branch``, unpacking
-the commit tree into the working tree, and setting ``.ahole/HEAD`` to contain the text ``ref:
-refs/heads/my-new-branch``
+Of course, then, if I want to work on this branch, I need to check it out,
+with::
+
+    ahole_checkout('my-new-branch')
+
+That will get the commit identifier in ``.ahole/refs/heads/my-new-branch``, unpack
+the commit tree into the working tree, and set ``.ahole/HEAD`` to contain the
+text ``ref: refs/heads/my-new-branch``
 
 
 On the sixth day - remotes
@@ -289,10 +379,10 @@ her computer to mine.  So, to keep track of things, I'll make a new directory,
 called ``.ahole/refs/remotes/eve``, and I'll copy all her *heads* - in this
 case just ``master`` - to that directory.   So now, I've got
 ``.ahole/refs/remotes/eve/master``, and in fact, it points to the commit that
-she did on the third day - and this was commit '79272'.  I don't have this
+she did on the third day - and this was commit '0a01a0'.  I don't have this
 commit in my ``.ahole`` directory, so I'll copy that from
-``/eves_computer/our_project/.ahole/79272.tar.gz``.  I look in the
-``info.txt`` file for that commit, and check what the parent is.  It is '44586'.
+``/eves_computer/our_project/.ahole/0a01a0``.  I look in the
+``info.txt`` file for that commit, and check what the parent is.  It is '7ef41f'.
 I check if I have that, and yes, I have, so I can stop copying stuff from Eve's
 directory.
 
@@ -308,39 +398,37 @@ So, what I just did was:
 We decide to call that two-step sequence - a *fetch*. 
 
 Now I want to look at her code.  I can just check it out of course.  I first get
-the commit number from ``.ahole/refs/remotes/eve/master`` - '79272'.  Then::
+the commit identifier from ``.ahole/refs/remotes/eve/master`` - '0a01a0'.
+Then::
 
-   tar zxf .ahole/79272.tar.gz
-   tar zxf files.tar.gz 
-   rm files.tar.gz
+    ahole_checkout('0a01a0')
 
-and I put '79272' into ``.ahole/HEAD``.  I can look at her code, and decide
+This will put '0a01a0' into ``.ahole/HEAD``.  I can look at her code, and decide
 if I like it.  If I do, then I can do a *merge*.  What's a merge?  It's the join
 of two commits.  First I work out where Eve's tree diverged from mine, by going
 back in her history, following the parents of the commits.  In this case it's
-easy, because the parent commit ('44586') of this commit ('79272') is one that
+easy, because the parent commit ('7ef41f') of this commit ('0a01a0') is one that
 is also in my history (the history for my 'master' branch).  Then I work out the
-difference between the last shared commit ('44586') and this commit ('79272') -
-let's call that ``eves_diff``.  
+difference between the last shared commit ('7ef41f') and this commit ('0a01a0')
+- let's call that ``eves_diff``.  
 
 I go back to my own 'master' - which turns out to be
-(``.ahole/refs/heads/master``) - '41607'::
+(``.ahole/refs/heads/master``) - 'dfbeda'::
 
-   tar zxf .ahole/41607.tar.gz
-   tar zxf files.tar.gz 
-   rm files.tar.gz
+    ahole_checkout('master')
    
-and change ``.ahole/HEAD`` to be ``ref: refs/heads/master``.  Then I take
+This will change ``.ahole/HEAD`` to be ``ref: refs/heads/master`` - and I will
+have just got the working tree from ``.ahole/dfbeda/files.zip``.  Then I take
 ``eves_diff`` and apply it to my current working tree.  If there were any
 conflicts, I resolve them, but in my world, there are no conflicts.  I have a
 feeling there may be some later.   That apple pie is making me feel a little
 funny.  
 
-Finally, I make a new commit, with a new random number - '64128', with the
-merged working tree.  But, there's a trick: here the new commit '64128' - has
-*two* parents, first - '41607' - the previous commit in my 'master', and second
-'79272' - the last commit in Eve's master.  Now, the next time I look at Eve's
-tree, I will be able to see that I've got her '79272' commit in my own history,
+Finally, I make a new commit, with a new unique ID - say '80cc85', with the
+merged working tree.  But, there's a trick: here the new commit '80cc85' - has
+*two* parents, first - 'dfbeda' - the previous commit in my 'master', and second
+'0a01a0' - the last commit in Eve's master.  Now, the next time I look at Eve's
+tree, I will be able to see that I've got her '0a01a0' commit in my own history,
 and won't need to apply it again.
 
 On the seventh day - there was git
@@ -367,8 +455,3 @@ little plot of land.
 
 
 .. include:: git_links.inc
-
-.. rubric:: Footnotes
-
-.. [#detached] In git, this is a 'detached HEAD'
-
