@@ -22,7 +22,8 @@ On the first day - the repository and the working tree
 ======================================================
 
 I decide that I want to keep track of my changes.  Because I currently lack any
-shame about body issues, I will call my new versioning system ``ahole`` [1]_ .
+shame about body issues, I will call my new versioning system ``ahole``
+[#ahole-git]_ .
 
 I decide that what I need to do is store the state of my book at the end of each
 day.  To do this, I make a new directory in my working tree, called ``.ahole``,
@@ -80,12 +81,12 @@ directory into the repository every day, the repository could get very large.
 I wonder if I should just store the things that are different from yesterday.
 
 I think about this for a while.  In the end I come up with an idea.  I'll make a
-directory in ``.ahole`` called ``index``.  When I get to the end of the day,
-I'll first go into the ``index`` directory, and make links to all the files fron
+directory in ``.ahole`` called ``staging_area``.  When I get to the end of the day,
+I'll first go into the ``staging_area`` directory, and make links to all the files fron
 yesterday, like this::
 
     ├── .ahole
-    │   ├─── index
+    │   ├─── staging_area
     │   │    ├── chapter1.txt (link to ../year0-jan-01/files/chapter1.txt)
     │   │    └── contents.txt (link to ../year0-jan-01/files/contents.txt)
     │   └── year0-jan-01
@@ -97,9 +98,9 @@ yesterday, like this::
 Of course, because these are links, they don't take up extra space on the disk.
 
 Then, I decide what I want to back up.   Maybe I have changed chapter 1, so I
-delete the link to ``chapter1.txt`` in ``index``, and copy ``chapter1.txt`` from
-the working directory to ``index``.  I'll call that *add*-ing the file to the
-index.  I'll also 'add' the new ``chapter2.txt`` file to the index.  I'm not
+delete the link to ``chapter1.txt`` in ``staging_area``, and copy ``chapter1.txt`` from
+the working directory to ``staging_area``.  I'll call that *add*-ing the file to the
+staging area.  I'll also 'add' the new ``chapter2.txt`` file to the staging area.  I'm not
 going to 'add' ``something_about_eve.txt`` at the moment.
 
 Now I've done that, all the stuff I want to store in the backup is ready.  I
@@ -110,8 +111,8 @@ do something like (Unix again)::
     mkdir .ahole/year0-jan-02/files
     # ``cp -a`` below copies links as new links rather than fresh copies of
     # the linked file
-    cp -a .ahole/index/* .ahole/year0-jan-02/files 
-    rm .ahole/index/*
+    cp -a .ahole/staging_area/* .ahole/year0-jan-02/files 
+    rm .ahole/staging_area/*
 
 I end up with a directory that looks like this::
 
@@ -133,9 +134,9 @@ I end up with a directory that looks like this::
 
 I decide that I'll use the name *commit* for each of the archive directories
 (``year0-jan-01`` and ``year0-jan-02``).  The action of adding files to the
-index, I will call *staging* files for the 'commit'.  I will use the term
+staging area, I will call *staging* files for the 'commit'.  I will use the term
 *committing* for the action of making the archive directory, and copying the
-files from the index to archive directory.
+files from the staging area to archive directory.
 
 On the third day - history
 ==========================
@@ -153,19 +154,19 @@ Eve checks out our book (reconstructs my working tree) with something like::
 she's got the same working tree as me (apart from the file I didn't want her to
 see).  She does some fine work on ``chapter1.txt``.  At the end of the day, she
 commits her changes the same way I do.  She first makes fresh links my last set
-of files in her own ``index``::
+of files in her own ``staging_area``::
 
     ├── .ahole
-    │   ├─── index
+    │   ├─── staging_area
     │   │    ├── chapter2.txt (link to ../year0-jan-02/files/chapter1.txt)
     │   │    ├── chapter1.txt (link to ../year0-jan-02/files/chapter1.txt)
     │   │    └── contents.txt (link to ../year0-jan-02/files/contents.txt)
 
 then she copies her own new ``chapter1.txt`` over the link to ``chapter1.txt``
-in the index::
+in the staging area::
 
     ├── .ahole
-    │   ├─── index
+    │   ├─── staging_area
     │   │    ├── chapter1.txt (fresh copy from Eve's working tree)
     │   │    ├── chapter2.txt (link to ../year0-jan-02/files/chapter1.txt)
     │   │    └── contents.txt (link to ../year0-jan-02/files/contents.txt)
@@ -176,8 +177,8 @@ and does a commit::
     mkdir .ahole/year0-jan-03/files
     # ``cp -a`` below copies links as new links rather than fresh copies of
     # the linked file
-    cp -a .ahole/index/* .ahole/year0-jan-03/files
-    rm .ahole/index/*
+    cp -a .ahole/staging_area/* .ahole/year0-jan-03/files
+    rm .ahole/staging_area/*
 
 At least, that is what Eve was going to do, but Eve is smart, and she
 immediately realizes that there is a problem.  After she has done her commit,
@@ -573,7 +574,7 @@ little plot of land.
 
 .. include:: git_links.inc
 
-.. rubric
+.. rubric:: Footnotes
 
-.. _[1] ``ahole`` might seem a bit rude to you, but I was born in the UK, and,
+.. [#ahole-git] ``ahole`` might seem a bit rude to you, but I was born in the UK, and,
         where I come from, 'ahole' is roughly as rude as 'git'. 

@@ -69,7 +69,8 @@ def read_dir_contents(path):
     '''
     contents = ''
     for fname in os.listdir(path):
-        contents += path + fname
+        full_fname = path + fname
+        contents += file(full_fname).read()
     return contents
 
 
@@ -169,6 +170,24 @@ def refspec_id_txt(refspec):
     return head_id, ref_ref
 
 
+def ahole_log(refspec='HEAD'):
+    ''' Print out log from given commit (HEAD is default)
+    '''
+    head_id, ref_txt = refspec_id_txt(refspec)
+    # Just do linear log for now
+    while head_id != '':
+        info_fname = '.ahole/' + head_id + '/info.txt'
+        info_str = file(info_fname, 'rt').read()
+        print 'Commit %s\n%s\n' % (head_id, info_str)
+        info_lines = info_str.split('\n')
+        for line in info_lines:
+            if line.startswith('parent = '):
+                head_id = line.replace('parent = ','').strip()
+                break
+        else: # found no parent
+            head_id = ''
+
+
 def ahole_tag(tagname, refspec='HEAD'):
     head_id, ref_txt = refspec_id_txt(refspec)
     ref_file = '.ahole/refs/tags/' + tagname
@@ -208,3 +227,6 @@ if __name__ == '__main__':
     ahole_checkout('first_commit')
     ahole_checkout('master')
     ahole_checkout('first_branch')
+    ahole_checkout('master')
+    ahole_log()
+    ahole_log('first_commit')
