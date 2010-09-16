@@ -909,13 +909,13 @@ version control system called *ahole*, you can use a very similar system called
 git_.
 
 If you use git_, you'll notice that you have lots of *ahole* friends.  You'll
-see git has a ``.git`` directory that contains the repository.  You'll recognize
-the ``.git/objects`` directory containing filenames with SHA1 hashes.  You'll
-see that commits have SHA1 hashes.  You'll recognize the ``.git/HEAD`` file and
-``.git/refs/heads`` and ``.git/refs/tags`` and ``.git/refs/heads/master``. There
-is a ``.git/index`` file, and it is the staging area. ``.git/index`` is a little
-more complicated than ``.ahole/index`` because it's adapted to helping with
-difficult merges, but it's the same idea. 
+see git creates a ``.git`` subdirectory that contains the repository.  You'll
+recognize the ``.git/objects`` directory containing filenames with SHA1 hashes.
+You'll see that commits have SHA1 hashes.  You'll recognize the ``.git/HEAD``
+file and ``.git/refs/heads`` and ``.git/refs/tags`` and
+``.git/refs/heads/master``. There is a ``.git/index`` file, and it is the
+staging area. ``.git/index`` is a little more complicated than ``.ahole/index``
+because it's adapted to helping with difficult merges, but it's the same idea. 
 
 You now live in the garden of Eden of version control.  Remember to stay away
 from that apple tree.
