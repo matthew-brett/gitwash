@@ -28,6 +28,11 @@
 .. _`dipy github`: http://github.com/Garyfallidis/dipy
 .. _`dipy mailing list`: http://mail.scipy.org/mailman/listinfo/nipy-devel
 
+.. marsbar
+.. _marsbar: http://marsbar.sourceforge.net
+.. _`marsbar github`: http://github.com/matthew-brett/marsbar
+.. _`MarsBaR mailing list`: https://lists.sourceforge.net/lists/listinfo/marsbar-users
+
 .. git stuff
 .. _git: http://git-scm.com/
 .. _github: http://github.com
@@ -66,7 +71,7 @@
 .. _git management: http://kerneltrap.org/Linux/Git_Management
 .. _linux git workflow: http://www.mail-archive.com/dri-devel@lists.sourceforge.net/msg39091.html
 .. _git parable: http://tom.preston-werner.com/2009/05/19/the-git-parable.html
-.. _git foundation: http://matthew-brett.github.com/pydagogue-doc/v0.1/foundation.html
+.. _git foundation: http://matthew-brett.github.com/pydagogue/foundation.html
 
 .. other stuff
 .. _python: http://www.python.org
