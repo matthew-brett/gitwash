@@ -28,6 +28,11 @@
 .. _`dipy github`: http://github.com/Garyfallidis/dipy
 .. _`dipy mailing list`: http://mail.scipy.org/mailman/listinfo/nipy-devel
 
+.. nibabel
+.. _nibabel: http://nipy.org/nibabel
+.. _`nibabel github`: http://github.com/nipy/nibabel
+.. _`nibabel mailing list`: http://mail.scipy.org/mailman/listinfo/nipy-devel
+
 .. marsbar
 .. _marsbar: http://marsbar.sourceforge.net
 .. _`marsbar github`: http://github.com/matthew-brett/marsbar
