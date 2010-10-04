@@ -13,6 +13,16 @@
 .. _`PROJECTNAME github`: http://github.com/nipy
 .. _`PROJECTNAME mailing list`: http://projects.scipy.org/mailman/listinfo/nipy-devel
 
+.. numpy
+.. _numpy: hhttp://numpy.scipy.org
+.. _`numpy github`: http://github.com/numpy/numpy
+.. _`numpy mailing list`: http://mail.scipy.org/mailman/listinfo/numpy-discussion
+
+.. scipy
+.. _scipy: http://www.scipy.org
+.. _`scipy github`: http://github.com/scipy/scipy
+.. _`scipy mailing list`: http://mail.scipy.org/mailman/listinfo/scipy-dev
+
 .. nipy
 .. _nipy: http://nipy.org/nipy
 .. _`nipy github`: http://github.com/nipy/nipy
