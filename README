@@ -37,7 +37,7 @@ Gitwash is one way of solving this problem.
   to dump the search / replaced docs into the ``doc/devel/gitwash``
   directory.
 * When defining your own project, you will need to fill out the links
-  for your project in the file ``gitwash/git_links.txt`` - see the
+  for your project in the file ``gitwash/git_links.inc`` - see the
   examples for ``nipy`` and ``ipython`` - just append under there with
   your equivalents.  For example, if your ``PROJECTNAME, REPONAME,
   MAIN_GH_USER`` are 'my_project', 'my_repo', 'my_user', then you would
