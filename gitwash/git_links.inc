@@ -90,3 +90,5 @@
 
 .. other stuff
 .. _python: http://www.python.org
+
+.. |emdash| unicode:: U+02014
