@@ -48,6 +48,9 @@
 .. _`marsbar github`: http://github.com/matthew-brett/marsbar
 .. _`MarsBaR mailing list`: https://lists.sourceforge.net/lists/listinfo/marsbar-users
 
+.. -------------------------------------------------
+.. project-specific links above the separator
+
 .. git stuff
 .. _git: http://git-scm.com/
 .. _github: http://github.com

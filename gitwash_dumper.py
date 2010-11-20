@@ -10,7 +10,7 @@ import glob
 import fnmatch
 import tempfile
 from subprocess import call
-
+from optparse import OptionParser
 
 verbose = False
 
@@ -66,19 +66,14 @@ def filename_search_replace(sr_pairs, filename, backup=False):
         open(filename + '.bak', 'wt').write(in_txt)
     return True
 
-        
+
 def copy_replace(replace_pairs,
+                 repo_path,
                  out_path,
-                 repo_url,
-                 repo_branch = 'master',
                  cp_globs=('*',),
                  rep_globs=('*',),
                  renames = ()):
-    repo_path = clone_repo(repo_url, repo_branch)
-    try:
-        out_fnames = cp_files(repo_path, cp_globs, out_path)
-    finally:
-        shutil.rmtree(repo_path)
+    out_fnames = cp_files(repo_path, cp_globs, out_path)
     renames = [(re.compile(in_exp), out_exp) for in_exp, out_exp in renames]
     fnames = []
     for rep_glob in rep_globs:
@@ -93,7 +88,32 @@ def copy_replace(replace_pairs,
                 os.rename(fname, new_fname)
                 break
 
-            
+
+def make_link_targets(proj_name, link_fname, url=None, ml_url=None):
+    """ Find and or modify project-specific link targets
+
+    Look for a target `proj_name`.
+    Look for a target `proj_name` + ' github'
+    Look for a target `proj_name` + ' mailing list'
+
+    If there are no links, then add block:
+
+    .. `proj_name`
+    .. `proj_name`: url
+    .. `proj_name` github: url
+    .. `proj_name` mailing list: url
+
+    If any of these are present, then choose the first of these, and look for a
+    comment '.. ' + `proj_name` above.
+
+    If the comment is absent from this search, add it.
+    Add links as above.
+    """
+    link_contents = open(link_fname, 'rt').readlines()
+    # do something substantial
+    open(link_fname, 'wt').writelines(link_contents)
+
+
 USAGE = ''' <output_directory> <project_name>
 
 If not set with options, the repository name is the same as the <project
@@ -107,8 +127,7 @@ GITWASH_CENTRAL = 'git://github.com/matthew-brett/gitwash.git'
 GITWASH_BRANCH = 'master'
 
 
-if __name__ == '__main__':
-    from optparse import OptionParser
+def main():
     parser = OptionParser()
     parser.set_usage(parser.get_usage().strip() + USAGE)
     parser.add_option("--repo-name", dest="repo_name",
@@ -131,6 +150,14 @@ if __name__ == '__main__':
                       help="suffix of ReST source files - default '.rst'",
                       default='.rst',
                       metavar="SOURCE_SUFFIX")
+    parser.add_option("--project-url", dest="project_url",
+                      help="URL for project web pages",
+                      default=None,
+                      metavar="PROJECT_URL")
+    parser.add_option("--project-ml-url", dest="project_ml_url",
+                      help="URL for project mailing list",
+                      default=None,
+                      metavar="PROJECT_ML_URL")
     (options, args) = parser.parse_args()
     if len(args) < 2:
         parser.print_help()
@@ -140,12 +167,23 @@ if __name__ == '__main__':
         options.repo_name = project_name
     if options.main_gh_user is None:
         options.main_gh_user = options.repo_name
-    copy_replace((('PROJECTNAME', project_name),
-                  ('REPONAME', options.repo_name),
-                  ('MAIN_GH_USER', options.main_gh_user)),
-                 out_path,
-                 options.gitwash_url,
-                 options.gitwash_branch,
-                 cp_globs=(pjoin('gitwash', '*'),),
-                 rep_globs=('*.rst',),
-                 renames=(('\.rst$', options.source_suffix),))
+    repo_path = clone_repo(options.gitwash_url, options.gitwash_branch)
+    try:
+        copy_replace((('PROJECTNAME', project_name),
+                      ('REPONAME', options.repo_name),
+                      ('MAIN_GH_USER', options.main_gh_user)),
+                     repo_path,
+                     out_path,
+                     cp_globs=(pjoin('gitwash', '*'),),
+                     rep_globs=('*.rst',),
+                     renames=(('\.rst$', options.source_suffix),))
+        make_link_targets(project_name,
+                          pjoin(out_path, 'gitwash', 'git_links.inc'),
+                          options.project_url,
+                          options.project_ml_url)
+    finally:
+        shutil.rmtree(repo_path)
+
+
+if __name__ == '__main__':
+    main()
