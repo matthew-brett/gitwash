@@ -8,15 +8,21 @@ from subprocess import call
 
 from nose.tools import assert_true, assert_equal, assert_raises
 
+_downpath, _ = psplit(dirname(__file__))
+EXE_PTH = pjoin(_downpath, 'gitwash_dumper.py')
+TMPDIR = None
+
+def setup():
+    global TMPDIR
+    TMPDIR = mkdtemp()
+
+
+def teardown():
+    shutil.rmtree(TMPDIR)
+
 
 def test_dumper():
-    downpath, _ = psplit(dirname(__file__))
-    exe_pth = pjoin(downpath, 'gitwash_dumper.py')
-    tmpdir = mkdtemp()
-    try:
-        call([exe_pth,
-              tmpdir,
-              'my_project'])
-    finally:
-        shutil.rmtree(tmpdir)
+    call([EXE_PTH,
+          TMPDIR,
+          'my_project'])
 
