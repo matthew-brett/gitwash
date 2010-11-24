@@ -110,9 +110,9 @@ def make_link_targets(proj_name,
     If we are writing any of the url, ml_url, or github address, then write new
     file with these links, of form:
 
-    .. `proj_name`
-    .. `proj_name`: url
-    .. `proj_name` mailing list: url
+    .. _`proj_name`
+    .. _`proj_name`: url
+    .. _`proj_name` mailing list: url
     """
     link_contents = open(known_link_fname, 'rt').readlines()
     have_url = not url is None
@@ -120,15 +120,15 @@ def make_link_targets(proj_name,
     have_gh_url = None
     for line in link_contents:
         if not have_url:
-            match = re.match(r'..\s+%s:\s+' % proj_name, line)
+            match = re.match(r'..\s+_%s:\s+' % proj_name, line)
             if match:
                 have_url = True
         if not have_ml_url:
-            match = re.match(r'..\s+`%s mailing list`:\s+' % proj_name, line)
+            match = re.match(r'..\s+_`%s mailing list`:\s+' % proj_name, line)
             if match:
                 have_ml_url = True
         if not have_gh_url:
-            match = re.match(r'..\s+`%s github`:\s+' % proj_name, line)
+            match = re.match(r'..\s+_`%s github`:\s+' % proj_name, line)
             if match:
                 have_gh_url = True
     if not have_url or not have_ml_url:
@@ -136,12 +136,12 @@ def make_link_targets(proj_name,
                            'and / or mailing list URLs')
     lines = []
     if not url is None:
-        lines.append('.. %s: %s\n' % (proj_name, url))
+        lines.append('.. _%s: %s\n' % (proj_name, url))
     if not have_gh_url:
         gh_url = 'http://github.com/%s/%s\n' % (user_name, repo_name)
-        lines.append('.. `%s github`: %s\n' % (proj_name, gh_url))
+        lines.append('.. _`%s github`: %s\n' % (proj_name, gh_url))
     if not ml_url is None:
-        lines.append('.. `%s mailing list`: %s\n' % (proj_name, ml_url))
+        lines.append('.. _`%s mailing list`: %s\n' % (proj_name, ml_url))
     if len(lines) == 0:
         # Nothing to do
         return
