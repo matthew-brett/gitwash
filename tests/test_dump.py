@@ -10,8 +10,8 @@ from subprocess import call
 from nose.tools import assert_true, assert_false, assert_equal, assert_raises
 
 _downpath, _ = psplit(dirname(__file__))
-_downpath = os.path.abspath(_downpath)
-EXE_PTH = pjoin(_downpath, 'gitwash_dumper.py')
+ROOT_DIR = os.path.abspath(_downpath)
+EXE_PTH = pjoin(ROOT_DIR, 'gitwash_dumper.py')
 DOC_DIR = pjoin(_downpath, 'gitwash')
 TMPDIR = None
 
@@ -21,8 +21,7 @@ def setup():
 
 
 def teardown():
-    #shutil.rmtree(TMPDIR)
-    print TMPDIR
+    shutil.rmtree(TMPDIR)
 
 
 def test_dumper():
@@ -35,7 +34,6 @@ def test_dumper():
         if not dirpath.endswith('gitwash'):
             raise RuntimeError('I only know about the gitwash directory')
         for filename in filenames:
-            print filename
             old_fname = pjoin(DOC_DIR, filename)
             new_fname = pjoin(dirpath, filename)
             old_contents = file(old_fname, 'rt').readlines()
@@ -44,5 +42,21 @@ def test_dumper():
                 if 'PROJECT' in old and not filename.endswith('.inc'):
                     assert_false('PROJECT' in new)
                     assert_true('my_project' in new)
+    shutil.rmtree(gitwdir)
 
 
+def test_building():
+    call([EXE_PTH,
+          TMPDIR,
+          'my_project'])
+    cwd = os.getcwd()
+    shutil.copy(pjoin(ROOT_DIR, 'conf.py'), TMPDIR)
+    try:
+        os.chdir(TMPDIR)
+        open('index.rst', 'wt').write('\n')
+        call('sphinx-build -b html -d _build/doctrees   . _build/html',
+             shell=True)
+        call('sphinx-build -b linkcheck -d _build/doctrees   . _build/linkcheck',
+             shell=True)
+    finally:
+        os.chdir(cwd)

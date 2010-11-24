@@ -81,9 +81,9 @@ In detail
       git commit -am 'BF - added fix for Funny bug'
 
    Note the ``-am`` options to ``commit``. The ``m`` flag just
-signals that you're going to type a message on the command
-line.  The ``a`` flag |emdash| you can just take on faith |emdash|
-or see `why the -a flag?`_.
+   signals that you're going to type a message on the command
+   line.  The ``a`` flag |emdash| you can just take on faith |emdash|
+   or see `why the -a flag?`_.
 
 #. When you have finished, check you have committed all your
    changes::
