@@ -131,4 +131,4 @@ Then::
 Then you can, if you want, follow the
 :ref:`development-workflow`.
 
-.. include:: git_links.inc
+.. include:: links.inc

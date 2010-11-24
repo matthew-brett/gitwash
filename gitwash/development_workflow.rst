@@ -236,4 +236,4 @@ To see a linear list of commits for this branch::
 You can also look at the `network graph visualizer`_ for your github_
 repo.
 
-.. include:: git_links.inc
+.. include:: links.inc

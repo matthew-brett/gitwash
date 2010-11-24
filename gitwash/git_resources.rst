@@ -56,4 +56,4 @@ online manual pages for some common commands:
 * `git remote`_
 * `git status`_
 
-.. include:: git_links.inc
+.. include:: links.inc
