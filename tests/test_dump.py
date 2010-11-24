@@ -27,7 +27,8 @@ def teardown():
 def test_dumper():
     call([EXE_PTH,
           TMPDIR,
-          'my_project'])
+          'marsbar',
+          '--gitwash-url=%s' % ROOT_DIR])
     gitwdir = pjoin(TMPDIR, 'gitwash')
     assert_true(os.path.isdir(gitwdir))
     for dirpath, dirnames, filenames in os.walk(gitwdir):
@@ -48,7 +49,8 @@ def test_dumper():
 def test_building():
     call([EXE_PTH,
           TMPDIR,
-          'my_project'])
+          'marsbar',
+          '--gitwash-url=%s' % ROOT_DIR])
     cwd = os.getcwd()
     shutil.copy(pjoin(ROOT_DIR, 'conf.py'), TMPDIR)
     try:

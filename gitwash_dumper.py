@@ -89,29 +89,67 @@ def copy_replace(replace_pairs,
                 break
 
 
-def make_link_targets(proj_name, link_fname, url=None, ml_url=None):
-    """ Find and or modify project-specific link targets
+def make_link_targets(proj_name,
+                      user_name,
+                      repo_name,
+                      known_link_fname,
+                      out_link_fname,
+                      url=None,
+                      ml_url=None):
+    """ Check and make link targets
+
+    If url is None or ml_url is None, check if there are links present for these
+    in `known_link_fname`.  If not, raise error.  The check is:
 
     Look for a target `proj_name`.
-    Look for a target `proj_name` + ' github'
     Look for a target `proj_name` + ' mailing list'
 
-    If there are no links, then add block:
+    Also, look for a target `proj_name` + 'github'.  If this exists, don't write
+    this target into the new file below.
+
+    If we are writing any of the url, ml_url, or github address, then write new
+    file with these links, of form:
 
     .. `proj_name`
     .. `proj_name`: url
-    .. `proj_name` github: url
     .. `proj_name` mailing list: url
-
-    If any of these are present, then choose the first of these, and look for a
-    comment '.. ' + `proj_name` above.
-
-    If the comment is absent from this search, add it.
-    Add links as above.
     """
-    link_contents = open(link_fname, 'rt').readlines()
-    # do something substantial
-    open(link_fname, 'wt').writelines(link_contents)
+    link_contents = open(known_link_fname, 'rt').readlines()
+    have_url = not url is None
+    have_ml_url = not ml_url is None
+    have_gh_url = None
+    for line in link_contents:
+        if not have_url:
+            match = re.match(r'..\s+%s:\s+' % proj_name, line)
+            if match:
+                have_url = True
+        if not have_ml_url:
+            match = re.match(r'..\s+`%s mailing list`:\s+' % proj_name, line)
+            if match:
+                have_ml_url = True
+        if not have_gh_url:
+            match = re.match(r'..\s+`%s github`:\s+' % proj_name, line)
+            if match:
+                have_gh_url = True
+    if not have_url or not have_ml_url:
+        raise RuntimeError('Need command line or known project '
+                           'and / or mailing list URLs')
+    lines = []
+    if not url is None:
+        lines.append('.. %s: %s\n' % (proj_name, url))
+    if not have_gh_url:
+        gh_url = 'http://github.com/%s/%s\n' % (user_name, repo_name)
+        lines.append('.. `%s github`: %s\n' % (proj_name, gh_url))
+    if not ml_url is None:
+        lines.append('.. `%s mailing list`: %s\n' % (proj_name, ml_url))
+    if len(lines) == 0:
+        # Nothing to do
+        return
+    # A neat little header line
+    lines = ['.. %s\n' % proj_name] + lines
+    out_links = open(out_link_fname, 'wt')
+    out_links.writelines(lines)
+    out_links.close()
 
 
 USAGE = ''' <output_directory> <project_name>
@@ -178,7 +216,10 @@ def main():
                      rep_globs=('*.rst',),
                      renames=(('\.rst$', options.source_suffix),))
         make_link_targets(project_name,
-                          pjoin(out_path, 'gitwash', 'git_links.inc'),
+                          options.main_gh_user,
+                          options.repo_name,
+                          pjoin(out_path, 'gitwash', 'known_projects.inc'),
+                          pjoin(out_path, 'gitwash', 'this_project.inc'),
                           options.project_url,
                           options.project_ml_url)
     finally:
