@@ -20,8 +20,8 @@ Here is an example ``.gitconfig`` file::
   [alias]
           ci = commit -a
           co = checkout
-          st = status -a
-          stat = status -a
+          st = status
+          stat = status
           br = branch
           wdiff = diff --color-words
   
