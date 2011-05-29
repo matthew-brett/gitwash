@@ -54,5 +54,6 @@ Gitwash is one way of solving this problem.
             --project-url=http://nipy.org \
             --project-ml-url=http://mail.scipy.org/mailman/listinfo/nipy-devel
 
-There's an example build of gitwash in the `pydagogue gitwash build
-<http://matthew-brett.github.com/pydagogue/gitwash_build.html>`_
+There's an example build of gitwash at
+http://matthew-brett.github.com/pydagogue/gitwash_build.html
+
