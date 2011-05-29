@@ -28,8 +28,8 @@ keeping history as clear as possible.
 
 See |emdash| for example |emdash| `linux git workflow`_.
 
-Making a branch to keep track of trunk
-======================================
+Make a branch to keep track of trunk
+====================================
 
 Here we make a branch to keep track of the upstream `PROJECTNAME github`_  repo.
 
@@ -84,8 +84,12 @@ It may sound strange, but deleting your own ``master`` branch can help reduce
 confusion about which branch you are on.  See `deleting master on github`_ for
 details.
 
-Making a new feature branch
-===========================
+Make a new feature branch
+=========================
+
+When you are ready to make some changes to the code, you should start a new
+branch.  Branches that are for a collection of related edits are often called
+'feature branches'.
 
 ::
 
@@ -93,15 +97,15 @@ Making a new feature branch
     git branch my-new-feature main-master
     git checkout my-new-feature
 
-Generally, you will want to keep this also on your public github_ fork
-of PROJECTNAME_.  To do this, you `git push`_ this new branch up to your github
-repo.  Generally (if you followed the instructions in these pages, and
-by default), git will have a link to your github repo, called
-``origin``.  You push up to your own repo on github with::
+Generally, you will want to keep your feature branches on your public github_
+fork of PROJECTNAME_.  To do this, you `git push`_ this new branch up to your
+github repo.  Generally (if you followed the instructions in these pages, and by
+default), git will have a link to your github repo, called ``origin``.  You push
+up to your own repo on github with::
 
    git push origin my-new-feature
 
-In git >1.7 you can ensure that the link is correctly set by using the
+In git > 1.7 you can ensure that the link is correctly set by using the
 ``--set-upstream`` option::
 
    git push --set-upstream origin my-new-feature
@@ -155,20 +159,25 @@ In more detail
 #. To push the changes up to your forked repo on github, do a ``git
    push`` (see `git push`).
 
-Asking for your changes to be reviewed or merged
-================================================
+Ask for your changes to be reviewed or merged
+=============================================
 
 When you are ready to ask for someone to review your code and consider a merge:
 
 #. Go to the URL of your forked repo, say
-   ``http://github.com/your-user-name/REPONAME.git``.
+   ``http://github.com/your-user-name/REPONAME``.
+#. Use the 'Switch Branches' dropdown menu near the top left of the page to
+   select the branch with your changes:
+
+   .. image:: branch_dropdown.png
+
 #. Click on the 'Pull request' button:
 
    .. image:: pull_button.png
 
    Enter a title for the set of changes, and some explanation of what you've
-   done, and anything you'd like particular attention for - like a complicated
-   change or some code you are not happy with.
+   done.  Say if there is anything you'd like particular attention for - like a
+   complicated change or some code you are not happy with.
 
    If you don't think your request is ready to be merged, just say so in your
    pull request message.  This is still a good way of getting some preliminary
@@ -218,8 +227,8 @@ usual::
      git commit -am 'ENH - much better code'
      git push origin master # pushes directly into your repo
 
-Exploring your repository
-=========================
+Explore your repository
+=======================
 
 To see a graphical representation of the repository branches and
 commits::

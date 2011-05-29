@@ -1,5 +1,3 @@
-.. _using-git:
-
 =======
 Gitwash
 =======
