@@ -12,7 +12,8 @@ Workflow summary
 ================
 
 * Make a ``main-master`` branch to keep track of the changes in the upstream
-  master branch.  We'll call this branch ``trunk``.
+  master branch. We'll call the upstream master branch "trunk" in the rest of
+  this page.
 * Don't use your ``master`` branch for anything.  Consider deleting it.
 * When you are starting a new set of changes, update the ``main-master`` branch,
   and start a new *feature branch* from that.
@@ -165,13 +166,13 @@ When you are ready to ask for someone to review your code and consider a merge:
 
    .. image:: pull_button.png
 
-   Enter a message; we suggest you select only ``PROJECTNAME`` as the
-   recipient.  The message will go to the `PROJECTNAME mailing list`_.  Please
-   feel free to add others from the list as you like.
+   Enter a title for the set of changes, and some explanation of what you've
+   done, and anything you'd like particular attention for - like a complicated
+   change or some code you are not happy with.
 
-If you don't think your request is ready to be merged, just say so in your pull
-request message.  This is still a good way of getting some preliminary code
-review.
+   If you don't think your request is ready to be merged, just say so in your
+   pull request message.  This is still a good way of getting some preliminary
+   code review.
 
 Deleting a branch on github_
 ============================
