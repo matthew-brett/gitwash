@@ -6,7 +6,7 @@ Development workflow
 
 You already have your own forked copy of the PROJECTNAME_ repository, by
 following :ref:`forking`, :ref:`set-up-fork`, and you have configured
-git_ by following :ref:`configure-git`.
+git by following :ref:`configure-git`.
 
 Workflow summary
 ================
@@ -94,10 +94,10 @@ Making a new feature branch
     git checkout my-new-feature
 
 Generally, you will want to keep this also on your public github_ fork
-of PROJECTNAME_.  To do this, you `git push`_ this new branch up to your github_
+of PROJECTNAME_.  To do this, you `git push`_ this new branch up to your github
 repo.  Generally (if you followed the instructions in these pages, and
-by default), git will have a link to your github_ repo, called
-``origin``.  You push up to your own repo on github_ with::
+by default), git will have a link to your github repo, called
+``origin``.  You push up to your own repo on github with::
 
    git push origin my-new-feature
 
@@ -106,8 +106,8 @@ In git >1.7 you can ensure that the link is correctly set by using the
 
    git push --set-upstream origin my-new-feature
 
-From now on git_ will know that ``my-new-feature`` is related to the
-``my-new-feature`` branch in the github_ repo.
+From now on git will know that ``my-new-feature`` is related to the
+``my-new-feature`` branch in the github repo.
 
 The editing workflow
 ====================
@@ -152,7 +152,7 @@ In more detail
    faith |emdash| or see `why the -a flag?`_ |emdash| and the helpful use-case
    description in the `tangled working copy problem`_. The `git commit`_ manual
    page might also be useful.
-#. To push the changes up to your forked repo on github_, do a ``git
+#. To push the changes up to your forked repo on github, do a ``git
    push`` (see `git push`).
 
 Asking for your changes to be reviewed or merged
@@ -174,8 +174,8 @@ When you are ready to ask for someone to review your code and consider a merge:
    pull request message.  This is still a good way of getting some preliminary
    code review.
 
-Deleting a branch on github_
-============================
+Deleting a branch on github
+===========================
 
 ::
 
@@ -193,7 +193,7 @@ Several people sharing a single repository
 
 If you want to work on some stuff with other people, where you are all
 committing into the same repository, or even the same branch, then just
-share it via github_.
+share it via github.
 
 First fork PROJECTNAME into your account, as from :ref:`forking`.
 
@@ -230,7 +230,7 @@ To see a linear list of commits for this branch::
 
    git log
 
-You can also look at the `network graph visualizer`_ for your github_
+You can also look at the `network graph visualizer`_ for your github
 repo.
 
 .. include:: links.inc

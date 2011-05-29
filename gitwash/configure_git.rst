@@ -9,14 +9,15 @@
 Overview
 ========
 
-Your personal git_ configurations are saved in the ``.gitconfig`` file in
+Your personal git configurations are saved in the ``.gitconfig`` file in
 your home directory.
+
 Here is an example ``.gitconfig`` file::
 
   [user]
           name = Your Name
           email = you@yourdomain.example.com
-  
+
   [alias]
           ci = commit -a
           co = checkout
@@ -24,7 +25,7 @@ Here is an example ``.gitconfig`` file::
           stat = status
           br = branch
           wdiff = diff --color-words
-  
+
   [core]
           editor = vim
 
@@ -33,7 +34,7 @@ Here is an example ``.gitconfig`` file::
 
 You can edit this file directly or you can use the ``git config --global``
 command::
-  
+
   git config --global user.name "Your Name"
   git config --global user.email you@yourdomain.example.com
   git config --global alias.ci "commit -a"
@@ -118,6 +119,5 @@ To enforce summaries when doing merges (``~/.gitconfig`` file again)::
 Or from the command line::
 
   git config --global merge.log true
-
 
 .. include:: links.inc
