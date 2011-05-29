@@ -243,7 +243,3 @@ You can also look at the `network graph visualizer`_ for your github
 repo.
 
 .. include:: links.inc
-
-.. rubric:: Footnotes
-
-.. [#thank_yarik] Thanks to Yarik Halchenko for this explanation.
