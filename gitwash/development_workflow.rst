@@ -11,26 +11,86 @@ git_ by following :ref:`configure-git`.
 Workflow summary
 ================
 
-* Keep your ``master`` branch clean of edits that have not been merged
-  to the main PROJECTNAME_ development repo.  Your ``master`` then will follow
-  the main PROJECTNAME_ repository.
-* Start a new *feature branch* for each set of edits that you do.
-* If you can avoid it, try not to merge other branches into your feature
-  branch while you are working.
+* Make a ``main-master`` branch to keep track of the changes in the upstream
+  master branch.  We'll call this branch ``trunk``.
+* Don't use your ``master`` branch for anything.  Consider deleting it.
+* When you are starting a new set of changes, update the ``main-master`` branch,
+  and start a new *feature branch* from that.
+* Make a new branch for each separable set of changes.
+* If you can possibly avoid it, try not to merge other branches into your
+  feature branch while you are working.
+* If you do find yourself merging from another branch, consider ``git rebase``
 * Ask for review!
 
 This way of working really helps to keep work well organized, and in
 keeping history as clear as possible.
 
-See |emdash| for example |emdash| `linux git workflow`_. 
+See |emdash| for example |emdash| `linux git workflow`_.
+
+Making a branch to keep track of trunk
+======================================
+
+Here we make a branch to keep track of the upstream `PROJECTNAME github`_  repo.
+
+Overview
+--------
+
+Once per repository clone::
+
+    # make a tracking branch to track upstream
+    git branch main-master --track upstream/master
+
+From time to time, to pull down the latest changes::
+
+   # go to your main-master tracking branch
+   git checkout main-master
+   # get upstream changes from github
+   git fetch upstream
+   # merge from upstream
+   git merge upstream/master
+
+We've used the name ``main-master`` to remind ourselves that this is
+the upstream branch.
+
+In detail
+---------
+
+We suggest that you only merge the upstream changes into your ``main-master``
+branch, and leave your 'feature' branches unmerged.  This keeps your code
+history clean and makes code review easier.
+
+First make sure you have done :ref:`linking-to-upstream`.
+
+Next make the upstream tracking branch.  You need to do this once for each clone
+you have made::
+
+    git branch main-master --track upstream/master
+
+This ``main-master`` branch will only contain the state of the upstream code.
+That is, please be careful not to make your own changes in this branch, as
+things will start to get confusing.
+
+To update your ``main-master`` branch with the latest upstream changes::
+
+    git checkout main-master
+    git fetch upstream
+    git merge upstream/master
+
+Consider deleting your master branch
+====================================
+
+It may sound strange, but deleting your own ``master`` branch can help reduce
+confusion about which branch you are on.  See `deleting master on github`_ for
+details.
 
 Making a new feature branch
 ===========================
 
 ::
 
-   git branch my-new-feature
-   git checkout my-new-feature
+    # Make new feature branch starting at current trunk
+    git branch my-new-feature main-master
+    git checkout my-new-feature
 
 Generally, you will want to keep this also on your public github_ fork
 of PROJECTNAME_.  To do this, you `git push`_ this new branch up to your github_
@@ -44,7 +104,7 @@ In git >1.7 you can ensure that the link is correctly set by using the
 ``--set-upstream`` option::
 
    git push --set-upstream origin my-new-feature
-   
+
 From now on git_ will know that ``my-new-feature`` is related to the
 ``my-new-feature`` branch in the github_ repo.
 
@@ -83,7 +143,7 @@ In more detail
 
 #. Check what the actual changes are with ``git diff`` (`git diff`_).
 #. Add any new files to version control ``git add new_file_name`` (see
-   `git add`_). 
+   `git add`_).
 #. To commit all modified files into the local copy of your repo,, do
    ``git commit -am 'A commit message'``.  Note the ``-am`` options to
    ``commit``. The ``m`` flag just signals that you're going to type a
@@ -92,65 +152,12 @@ In more detail
    description in the `tangled working copy problem`_. The `git commit`_ manual
    page might also be useful.
 #. To push the changes up to your forked repo on github_, do a ``git
-   push`` (see `git push`). 
+   push`` (see `git push`).
 
-Asking for code review
-======================
+Asking for your changes to be reviewed or merged
+================================================
 
-#. Go to your repo URL |emdash| e.g. ``http://github.com/your-user-name/REPONAME``.
-#. Click on the *Branch list* button:
-
-   .. image:: branch_list.png
-
-#. Click on the *Compare* button for your feature branch |emdash| here ``my-new-feature``:
-
-   .. image:: branch_list_compare.png
-
-#. If asked, select the *base* and *comparison* branch names you want to
-   compare.  Usually these will be ``master`` and ``my-new-feature``
-   (where that is your feature branch name).
-#. At this point you should get a nice summary of the changes.  Copy the
-   URL for this, and post it to the `PROJECTNAME mailing list`_, asking for
-   review.  The URL will look something like:
-   ``http://github.com/your-user-name/REPONAME/compare/master...my-new-feature``.
-   There's an example at
-   http://github.com/matthew-brett/nipy/compare/master...find-install-data
-   See: http://github.com/blog/612-introducing-github-compare-view for
-   more detail.
-
-The generated comparison, is between your feature branch
-``my-new-feature``, and the place in ``master`` from which you branched
-``my-new-feature``.  In other words, you can keep updating ``master``
-without interfering with the output from the comparison.  More detail? 
-Note the three dots in the URL above (``master...my-new-feature``).
-
-.. admonition:: Two vs three dots
-
-  Imagine a series of commits A, B, C, D...  Imagine that there are two
-  branches, *topic* and *master*.  You branched *topic* off *master* when
-  *master* was at commit 'E'.  The graph of the commits looks like this::
-
-
-	  A---B---C topic
-	  /
-    D---E---F---G master
-
-  Then::
-
-    git diff master..topic
-
-  will output the difference from G to C (i.e. with effects of F and G),
-  while::
-
-    git diff master...topic
-
-  would output just differences in the topic branch (i.e. only A, B, and
-  C). [#thank_yarik]_
-
-Asking for your changes to be merged with the main repo
-=======================================================
-
-When you are ready to ask for the merge of your code:
+When you are ready to ask for someone to review your code and consider a merge:
 
 #. Go to the URL of your forked repo, say
    ``http://github.com/your-user-name/REPONAME.git``.
@@ -162,42 +169,9 @@ When you are ready to ask for the merge of your code:
    recipient.  The message will go to the `PROJECTNAME mailing list`_.  Please
    feel free to add others from the list as you like.
 
-Merging from trunk
-==================
-
-This updates your code from the upstream `PROJECTNAME github`_  repo. 
-
-Overview
---------
-
-::
-
-   # go to your master branch
-   git checkout master
-   # pull changes from github
-   git fetch upstream
-   # merge from upstream
-   git merge upstream/master
-
-In detail
----------
-
-We suggest that you do this only for your ``master`` branch, and leave
-your 'feature' branches unmerged, to keep their history as clean as
-possible.  This makes code review easier::
-
-   git checkout master
-
-Make sure you have done :ref:`linking-to-upstream`.
-
-Merge the upstream code into your current development by first pulling
-the upstream repo to a copy on your local machine::
-
-   git fetch upstream
-
-then merging into your current branch::
-
-   git merge upstream/master
+If you don't think your request is ready to be merged, just say so in your pull
+request message.  This is still a good way of getting some preliminary code
+review.
 
 Deleting a branch on github_
 ============================
