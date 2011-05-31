@@ -39,6 +39,7 @@
 .. _git log: http://www.kernel.org/pub/software/scm/git/docs/git-log.html
 .. _git branch: http://www.kernel.org/pub/software/scm/git/docs/git-branch.html
 .. _git remote: http://www.kernel.org/pub/software/scm/git/docs/git-remote.html
+.. _git rebase: http://www.kernel.org/pub/software/scm/git/docs/git-rebase.html
 .. _git config: http://www.kernel.org/pub/software/scm/git/docs/git-config.html
 .. _why the -a flag?: http://www.gitready.com/beginner/2009/01/18/the-staging-area.html
 .. _git staging area: http://www.gitready.com/beginner/2009/01/18/the-staging-area.html
@@ -48,6 +49,9 @@
 .. _git parable: http://tom.preston-werner.com/2009/05/19/the-git-parable.html
 .. _git foundation: http://matthew-brett.github.com/pydagogue/foundation.html
 .. _deleting master on github: http://matthew-brett.github.com/pydagogue/gh_delete_master.html
+.. _rebase without tears: http://matthew-brett.github.com/pydagogue/rebase_without_tears.html
+.. _resolving a merge: http://www.kernel.org/pub/software/scm/git/docs/user-manual.html#resolving-a-merge
+.. _ipython git workflow: http://mail.scipy.org/pipermail/ipython-dev/2010-October/006746.html
 
 .. other stuff
 .. _python: http://www.python.org

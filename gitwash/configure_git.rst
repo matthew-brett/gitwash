@@ -120,6 +120,8 @@ Or from the command line::
 
   git config --global merge.log true
 
+.. _fancy-log:
+
 Fancy log output
 ----------------
 
