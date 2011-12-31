@@ -3,7 +3,7 @@
 ================
 
 You've discovered a bug or something else you want to change
-in PROJECTNAME_ .. |emdash| excellent!
+in `PROJECTNAME`_ .. |emdash| excellent!
 
 You've worked out a way to fix it |emdash| even better!
 
@@ -57,7 +57,7 @@ In detail
       git config --global user.name "Your Name Comes Here"
 
 #. If you don't already have one, clone a copy of the
-   PROJECTNAME_ repository::
+   `PROJECTNAME`_ repository::
 
       git clone git://github.com/MAIN_GH_USER/REPONAME.git
       cd REPONAME
@@ -115,7 +115,7 @@ more feature branches, you will probably want to switch to
 development mode.  You can do this with the repository you
 have.
 
-Fork the PROJECTNAME_ repository on github |emdash| :ref:`forking`.
+Fork the `PROJECTNAME`_ repository on github |emdash| :ref:`forking`.
 Then::
 
    # checkout and refresh master branch from main repo
