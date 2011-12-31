@@ -1,7 +1,7 @@
 .. _using-git:
 
 Working with *PROJECTNAME* source code
-======================================
+================================================
 
 Contents:
 
