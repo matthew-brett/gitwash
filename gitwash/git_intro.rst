@@ -2,7 +2,7 @@
  Introduction
 ==============
 
-These pages describe a git_ and github_ workflow for the PROJECTNAME_
+These pages describe a git_ and github_ workflow for the `PROJECTNAME`_
 project.
 
 There are several different workflows here, for different ways of
