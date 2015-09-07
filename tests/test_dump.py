@@ -1,6 +1,8 @@
 """ Testing gitwash dumper
 """
 
+from __future__ import (absolute_import, division, print_function)
+
 import os
 from os.path import join as pjoin, dirname, split as psplit
 import sys
@@ -50,7 +52,9 @@ def test_link_checks():
         test_fname,
         'http://nowhere.org',
         None)
-    assert_equal(open(test_fname, 'rt').read(),
+    with open(test_fname, 'rt') as test_fh:
+        expected_text = test_fname.read()
+    assert_equal(expected_text,
                  """.. nipy
 .. _nipy: http://nowhere.org
 """)
@@ -87,7 +91,8 @@ def test_building():
     shutil.copy(pjoin(ROOT_DIR, 'conf.py'), TMPDIR)
     try:
         os.chdir(TMPDIR)
-        open('index.rst', 'wt').write('\n')
+        with open('index.rst', 'wt') as index_fh:
+            index_fh.write('\n')
         call('sphinx-build -b html -d _build/doctrees   . _build/html',
              shell=True)
         call('sphinx-build -b linkcheck -d _build/doctrees   . _build/linkcheck',
