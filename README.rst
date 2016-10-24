@@ -60,5 +60,5 @@ Gitwash is one way of solving this problem.
             --project-ml-url=https://mail.scipy.org/mailman/listinfo/nipy-devel
 
 There's an example build of gitwash at
-https://matthew-brett.github.com/pydagogue/gitwash_build.html
+https://matthew-brett.github.io/pydagogue/gitwash_build.html
 
