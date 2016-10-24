@@ -18,13 +18,11 @@
 .. _git cheat sheet: https://help.github.com/git-cheat-sheets/
 .. _pro git book: https://progit.org/
 .. _git svn crash course: https://git-scm.com/course/svn.html
-.. _learn.github: http://learn.github.com/
 .. _network graph visualizer: https://github.com/blog/39-say-hello-to-the-network-graph-visualizer
 .. _git user manual: https://schacon.github.io/git/user-manual.html
 .. _git tutorial: https://schacon.github.io/git/gittutorial.html
 .. _git community book: https://git-scm.com/book/en/v2
 .. _git ready: http://gitready.com/
-.. _git casts: http://www.gitcasts.com/
 .. _Fernando's git page: http://www.fperez.org/py4science/git.html
 .. _git magic: http://www-cs-students.stanford.edu/~blynn/gitmagic/index.html
 .. _git concepts: https://www.sbf5.com/~cduan/technical/git/
