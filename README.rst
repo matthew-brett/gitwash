@@ -34,7 +34,7 @@ Gitwash is one way of solving this problem.
   that you choose. You might want a copy of this tool somewhere in your
   repository.  You can refresh it from time time with::
 
-    curl -O https://raw.github.com/matthew-brett/gitwash/master/gitwash_dumper.py
+    curl -O https://raw.githubusercontent.com/matthew-brett/gitwash/master/gitwash_dumper.py
 
   For IPython, ``PROJECTNAME`` is 'IPython', ``REPONAME`` is 'ipython', and the
   ``MAIN_GH_USER`` is also 'ipython'.  An example command for *ipython* might

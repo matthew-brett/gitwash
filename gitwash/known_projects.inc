@@ -16,7 +16,7 @@
 .. _`scipy mailing list`: https://mail.scipy.org/mailman/listinfo/scipy-dev
 
 .. nipy
-.. _nipy: http://nipy.org/nipy
+.. _nipy: http://nipy.org/nipy/
 .. _`nipy github`: https://github.com/nipy/nipy
 .. _`nipy mailing list`: https://mail.python.org/mailman/listinfo/neuroimaging
 
@@ -26,12 +26,12 @@
 .. _`ipython mailing list`: https://mail.scipy.org/mailman/listinfo/IPython-dev
 
 .. dipy
-.. _dipy: http://nipy.org/dipy
+.. _dipy: http://nipy.org/dipy/
 .. _`dipy github`: https://github.com/Garyfallidis/dipy
 .. _`dipy mailing list`: https://mail.python.org/mailman/listinfo/neuroimaging
 
 .. nibabel
-.. _nibabel: http://nipy.org/nibabel
+.. _nibabel: http://nipy.org/nibabel/
 .. _`nibabel github`: https://github.com/nipy/nibabel
 .. _`nibabel mailing list`: https://mail.python.org/mailman/listinfo/neuroimaging
 
