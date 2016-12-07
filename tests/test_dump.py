@@ -50,13 +50,13 @@ def test_link_checks():
         'nipy',
         pjoin(DOC_DIR, 'known_projects.inc'),
         test_fname,
-        'http://nowhere.org',
+        'https://nowhere.org',
         None)
     with open(test_fname, 'rt') as test_fh:
         expected_text = test_fname.read()
     assert_equal(expected_text,
                  """.. nipy
-.. _nipy: http://nowhere.org
+.. _nipy: https://nowhere.org
 """)
 
 

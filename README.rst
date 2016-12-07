@@ -34,15 +34,15 @@ Gitwash is one way of solving this problem.
   that you choose. You might want a copy of this tool somewhere in your
   repository.  You can refresh it from time time with::
 
-    curl -O https://raw.github.com/matthew-brett/gitwash/master/gitwash_dumper.py
+    curl -O https://raw.githubusercontent.com/matthew-brett/gitwash/master/gitwash_dumper.py
 
   For IPython, ``PROJECTNAME`` is 'IPython', ``REPONAME`` is 'ipython', and the
   ``MAIN_GH_USER`` is also 'ipython'.  An example command for *ipython* might
   then be::
 
      gitwash_dumper.py doc/devel IPython --repo-name=ipython --github-user=ipython \
-        --project-url=http://ipython.scipy.org \
-        --project-ml-url=http://mail.scipy.org/mailman/listinfo/IPython-dev
+        --project-url=https://ipython.org \
+        --project-ml-url=https://mail.scipy.org/mailman/listinfo/IPython-dev
 
   to dump the search / replaced docs into the ``doc/devel/gitwash``
   directory.
@@ -57,8 +57,8 @@ Gitwash is one way of solving this problem.
      gitwash-update:
         python ../tools/gitwash_dumper.py devel/guidelines nipy \
             --project-url=http://nipy.org \
-            --project-ml-url=http://mail.scipy.org/mailman/listinfo/nipy-devel
+            --project-ml-url=https://mail.scipy.org/mailman/listinfo/nipy-devel
 
 There's an example build of gitwash at
-http://matthew-brett.github.com/pydagogue/gitwash_build.html
+https://matthew-brett.github.io/pydagogue/gitwash_build.html
 
