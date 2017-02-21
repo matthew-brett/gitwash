@@ -1,3 +1,5 @@
+.. highlight:: bash
+
 .. _development-workflow:
 
 ####################
@@ -116,7 +118,9 @@ In more detail
 
 #. Make some changes
 #. See which files have changed with ``git status`` (see `git status`_).
-   You'll see a listing like this one::
+   You'll see a listing like this one:
+
+   .. code-block:: none
 
      # On branch ny-new-feature
      # Changed but not updated:
@@ -243,7 +247,9 @@ Let's say you thought of some work you'd like to do. You
 ``cool-feature``. At this stage trunk is at some commit, let's call it E. Now
 you make some new commits on your ``cool-feature`` branch, let's call them A, B,
 C.  Maybe your changes take a while, or you come back to them after a while.  In
-the meantime, trunk has progressed from commit E to commit (say) G::
+the meantime, trunk has progressed from commit E to commit (say) G:
+
+.. code-block:: none
 
           A---B---C cool-feature
          /
@@ -259,7 +265,9 @@ you may prefer to do a rebase.
 rebase takes your changes (A, B, C) and replays them as if they had been made to
 the current state of ``trunk``.  In other words, in this case, it takes the
 changes represented by A, B, C and replays them on top of G. After the rebase,
-your history will look like this::
+your history will look like this:
+
+.. code-block:: none
 
                   A'--B'--C' cool-feature
                  /

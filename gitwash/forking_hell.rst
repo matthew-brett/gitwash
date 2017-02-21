@@ -1,3 +1,5 @@
+.. highlight:: bash
+
 .. _forking:
 
 ======================================================
@@ -26,8 +28,7 @@ Create your own forked copy of `PROJECTNAME`_
 
    .. image:: forking_button.png
 
-   Now, after a short pause and some 'Hardcore forking action', you
-   should find yourself at the home page for your own forked copy of `PROJECTNAME`_.
+   Now, after a short pause, you should find yourself at the home page for
+   your own forked copy of `PROJECTNAME`_.
 
 .. include:: links.inc
-

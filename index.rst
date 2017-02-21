@@ -9,3 +9,7 @@ Contents:
 
    gitwash/index
 
+.. toctree::
+    :hidden:
+
+    README

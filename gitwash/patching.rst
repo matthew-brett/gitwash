@@ -1,3 +1,5 @@
+.. highlight:: bash
+
 ================
  Making a patch
 ================
@@ -95,7 +97,9 @@ In detail
 
       git format-patch -M -C master
 
-   You will now have several files named for the commits::
+   You will now have several files named for the commits:
+
+   .. code-block:: none
 
       0001-BF-added-tests-for-Funny-bug.patch
       0002-BF-added-fix-for-Funny-bug.patch
