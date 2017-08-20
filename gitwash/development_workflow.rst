@@ -402,7 +402,7 @@ This means that (i) we want to edit the commit message for
 ``13d7934``, and (ii) collapse the last three commits into one. Now we
 save and quit the editor.
 
-Git will then immediately bring up an editor for editing the commit
+git will then immediately bring up an editor for editing the commit
 message. After revising it, we get the output::
 
     [detached HEAD 721fc64] FOO: First implementation
