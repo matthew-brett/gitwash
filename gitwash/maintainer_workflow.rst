@@ -106,9 +106,14 @@ Push to contributor branches
 GitHub now allows people with commit rights to a repository to push to
 the source branch of PRs (into the sumbitter's fork).  This can be
 very helpful to push small fixes (that take longer to describe than to
-just _do_) and to help recovering from git-snarls.  First add the
-user's remote (note the difference from :ref:`integrate_changes`
-above, this is is a read/write remote) ::
+just _do_) and to help recovering from git-snarls.
+
+
+With a remote
+-------------
+
+First add the user's remote (note the difference from
+:ref:`integrate_changes` above, this is is a read/write remote) ::
 
   git remote add USER git@github.com:USER/matplotlib.git
   git fetch USER
@@ -122,6 +127,16 @@ you can now edit and commit as normal.  Finally ::
   git push
 
 will push your changes back to the user branch.
+
+Without a remote
+----------------
+
+You can also do this without adding a remote, but it requires a bit more manual
+branch tracking where ``NNN`` is the PR number::
+
+    git fetch upstream pull/NNN/head:NNN-branch-name;
+    git checkout NNN-branch-name;
+    git push git@github.com:USER/matplotlib NNN-branch-name:branch-name
 
 
 .. include:: links.inc
