@@ -21,6 +21,9 @@ it's a read-write remote::
     git remote add upstream-rw git@github.com:MAIN_GH_USER/REPONAME.git
     git fetch upstream-rw
 
+
+.. _integrate_changes:
+
 *******************
 Integrating changes
 *******************
@@ -94,5 +97,31 @@ Push to trunk
 
 This pushes the ``my-new-feature`` branch in this repository to the ``master``
 branch in the ``upstream-rw`` repository.
+
+
+****************************
+Push to contributor branches
+****************************
+
+GitHub now allows people with commit rights to a repository to push to
+the source branch of PRs (into the sumbitter's fork).  This can be
+very helpful to push small fixes (that take longer to describe than to
+just _do_) and to help recovering from git-snarls.  First add the
+user's remote (note the difference from :ref:`integrate_changes`
+above, this is is a read/write remote) ::
+
+  git remote add USER git@github.com:USER/matplotlib.git
+  git fetch USER
+
+and then checkout the user's branch::
+
+  git checkout -t USER/branch-name
+
+you can now edit and commit as normal.  Finally ::
+
+  git push
+
+will push your changes back to the user branch.
+
 
 .. include:: links.inc
