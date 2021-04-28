@@ -43,7 +43,7 @@
 .. _tangled working copy problem: https://2ndscale.com/rtomayko/2008/the-thing-about-git
 .. _git management: https://web.archive.org/web/20090224195437/http://kerneltrap.org/Linux/Git_Management
 .. _linux git workflow: https://www.mail-archive.com/dri-devel@lists.sourceforge.net/msg39091.html
-.. _git parable: http://tom.preston-werner.com/2009/05/19/the-git-parable.html
+.. _git parable: https://tom.preston-werner.com/2009/05/19/the-git-parable.html
 .. _git foundation: https://matthew-brett.github.io/pydagogue/foundation.html
 .. _deleting master on github: https://matthew-brett.github.io/pydagogue/gh_delete_master.html
 .. _rebase without tears: https://matthew-brett.github.io/pydagogue/rebase_without_tears.html

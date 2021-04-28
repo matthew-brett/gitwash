@@ -1,12 +1,12 @@
 .. Known projects
 
 .. PROJECTNAME placeholders
-.. _PROJECTNAME: http://nipy.org
+.. _PROJECTNAME: https://nipy.org/
 .. _`PROJECTNAME github`: https://github.com/nipy
 .. _`PROJECTNAME mailing list`: https://mail.python.org/mailman/listinfo/neuroimaging
 
 .. numpy
-.. _numpy: http://www.numpy.org
+.. _numpy: https://numpy.org/
 .. _`numpy github`: https://github.com/numpy/numpy
 .. _`numpy mailing list`: https://mail.scipy.org/mailman/listinfo/numpy-discussion
 
@@ -26,16 +26,16 @@
 .. _`ipython mailing list`: https://mail.scipy.org/mailman/listinfo/IPython-dev
 
 .. dipy
-.. _dipy: http://nipy.org/dipy/
+.. _dipy: https://nipy.org/dipy/
 .. _`dipy github`: https://github.com/Garyfallidis/dipy
 .. _`dipy mailing list`: https://mail.python.org/mailman/listinfo/neuroimaging
 
 .. nibabel
-.. _nibabel: http://nipy.org/nibabel/
+.. _nibabel: https://nipy.org/nibabel/
 .. _`nibabel github`: https://github.com/nipy/nibabel
 .. _`nibabel mailing list`: https://mail.python.org/mailman/listinfo/neuroimaging
 
 .. marsbar
 .. _marsbar: http://marsbar.sourceforge.net
 .. _`marsbar github`: https://github.com/matthew-brett/marsbar
-.. _`MarsBaR mailing list`: https://lists.sourceforge.net/lists/listinfo/marsbar-users
+.. _`MarsBaR mailing list`: https://sourceforge.net/projects/marsbar/lists/marsbar-users
