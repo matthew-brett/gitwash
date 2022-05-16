@@ -32,9 +32,9 @@ Gitwash is one way of solving this problem.
   do a search and replace on these strings and replace them with the
   ones you want, and then output these into your own docs in a place
   that you choose. You might want a copy of this tool somewhere in your
-  repository.  You can refresh it from time time with::
+  repository.  You can refresh it from time to time with::
 
-    curl -O https://raw.githubusercontent.com/matthew-brett/gitwash/master/gitwash_dumper.py
+    curl -O https://raw.githubusercontent.com/matthew-brett/gitwash/main/gitwash_dumper.py
 
   For IPython, ``PROJECTNAME`` is 'IPython', ``REPONAME`` is 'ipython', and the
   ``MAIN_GH_USER`` is also 'ipython'.  An example command for *ipython* might
