@@ -208,7 +208,7 @@ collaborator:
 
 Now all those people can do::
 
-    git clone git@githhub.com:your-user-name/REPONAME.git
+    git clone git@github.com:your-user-name/REPONAME.git
 
 Your collaborators can then commit directly into that repo with the
 usual::
