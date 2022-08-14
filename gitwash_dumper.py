@@ -166,7 +166,7 @@ If not set with options, the main github user is the same as the
 repository name.'''
 
 
-GITWASH_CENTRAL = 'git://github.com/matthew-brett/gitwash.git'
+GITWASH_CENTRAL = 'https://github.com/matthew-brett/gitwash.git'
 GITWASH_BRANCH = 'main'
 
 
