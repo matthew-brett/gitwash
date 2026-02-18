@@ -67,7 +67,7 @@ When you are ready to make some changes to the code, you should start a new
 branch.  Branches that are for a collection of related edits are often called
 'feature branches'.
 
-Making an new branch for each set of related changes will make it easier for
+Making a new branch for each set of related changes will make it easier for
 someone reviewing your branch to see what you are doing.
 
 Choose an informative name for the branch to remind yourself and the rest of us
@@ -138,7 +138,7 @@ In more detail
 #. Check what the actual changes are with ``git diff`` (`git diff`_).
 #. Add any new files to version control ``git add new_file_name`` (see
    `git add`_).
-#. To commit all modified files into the local copy of your repo,, do
+#. To commit all modified files into the local copy of your repo, do
    ``git commit -am 'A commit message'``.  Note the ``-am`` options to
    ``commit``. The ``m`` flag just signals that you're going to type a
    message on the command line.  The ``a`` flag |emdash| you can just take on
@@ -339,7 +339,7 @@ Rewriting commit history
 
    Do this only for your own feature branches.
 
-There's an embarrassing typo in a commit you made? Or perhaps the you
+There's an embarrassing typo in a commit you made? Or perhaps you
 made several false starts you would like the posterity not to see.
 
 This can be done via *interactive rebasing*.
