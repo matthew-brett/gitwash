@@ -57,7 +57,7 @@ Gitwash is one way of solving this problem.
      gitwash-update:
         python ../tools/gitwash_dumper.py devel/guidelines nipy \
             --project-url=https://nipy.org/ \
-            --project-ml-url=https://mail.scipy.org/mailman/listinfo/nipy-devel
+            --project-ml-url=https://mail.python.org/mailman3/lists/neuroimaging.python.org
 
 There's an example build of gitwash at
 https://matthew-brett.github.io/pydagogue/gitwash_build.html
