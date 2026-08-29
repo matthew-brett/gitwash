@@ -194,3 +194,12 @@ latex_documents = [
 
 # If false, no module index is generated.
 #latex_use_modindex = True
+
+# Hosts that block or flake under automated link checkers
+linkcheck_ignore = [
+    r'https://mail\.scipy\.org/.*',
+    r'https://web\.archive\.org/.*',
+    r'https://sourceforge\.net/.*',
+]
+linkcheck_timeout = 15
+linkcheck_retries = 2

@@ -11,20 +11,21 @@
 .. git stuff
 .. _git: https://git-scm.com/
 .. _github: https://github.com
-.. _github help: https://help.github.com
+.. _github help: https://docs.github.com/
 .. _msysgit: https://git-scm.com/download/win
 .. _git-osx-installer: https://git-scm.com/download/mac
-.. _subversion: http://subversion.tigris.org/
-.. _git cheat sheet: https://help.github.com/git-cheat-sheets/
+.. _subversion: https://subversion.apache.org/
+.. _git cheat sheet: https://education.github.com/git-cheat-sheet-education.pdf
 .. _pro git book: https://git-scm.com/book/en/v2
-.. _git svn crash course: https://git-scm.com/course/svn.html
-.. _network graph visualizer: https://github.com/blog/39-say-hello-to-the-network-graph-visualizer
+.. _git svn crash course: https://git-scm.com/book/en/v2/Git-and-Other-Systems-Git-as-a-Client
+.. _network graph visualizer: https://github.blog/news-insights/the-library/say-hello-to-the-network-graph-visualizer/
 .. _git user manual: https://schacon.github.io/git/user-manual.html
 .. _git tutorial: https://schacon.github.io/git/gittutorial.html
-.. _git ready: http://gitready.com/
-.. _Fernando's git page: http://www.fperez.org/py4science/git.html
+.. _git ready: https://gitready.com/
+.. _Fernando's git intro:
+.. _Fernando's git page: https://fernandoperez.org/teaching/git-intro/intro
 .. _git magic: http://www-cs-students.stanford.edu/~blynn/gitmagic/index.html
-.. _git concepts: https://www.sbf5.com/~cduan/technical/git/
+.. _git concepts: https://www.cduan.com/technical/git/
 .. _git clone: https://schacon.github.io/git/git-clone.html
 .. _git checkout: https://schacon.github.io/git/git-checkout.html
 .. _git commit: https://schacon.github.io/git/git-commit.html
@@ -38,9 +39,9 @@
 .. _git remote: https://schacon.github.io/git/git-remote.html
 .. _git rebase: https://schacon.github.io/git/git-rebase.html
 .. _git config: https://schacon.github.io/git/git-config.html
-.. _why the -a flag?: http://gitready.com/beginner/2009/01/18/the-staging-area.html
-.. _git staging area: http://gitready.com/beginner/2009/01/18/the-staging-area.html
-.. _tangled working copy problem: https://2ndscale.com/rtomayko/2008/the-thing-about-git
+.. _why the -a flag?: https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository
+.. _git staging area: https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository
+.. _tangled working copy problem: https://tomayko.com/blog/2008/the-thing-about-git
 .. _git management: https://web.archive.org/web/20090224195437/http://kerneltrap.org/Linux/Git_Management
 .. _linux git workflow: https://www.mail-archive.com/dri-devel@lists.sourceforge.net/msg39091.html
 .. _git parable: https://tom.preston-werner.com/2009/05/19/the-git-parable.html

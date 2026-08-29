@@ -18,8 +18,8 @@ Tutorials and summaries
 * `git magic`_ |emdash| extended introduction with intermediate detail
 * The `git parable`_ is an easy read explaining the concepts behind git.
 * `git foundation`_ expands on the `git parable`_.
-* Fernando Perez' git page |emdash| `Fernando's git page`_ |emdash| many
-  links and tips
+* Fernando Perez' git page |emdash| `Fernando's git intro`_.  Follow
+  git-related links in the page sidebar for other links and tips.
 * A good but technical page on `git concepts`_
 * `git svn crash course`_: git for those of us used to subversion_
 
