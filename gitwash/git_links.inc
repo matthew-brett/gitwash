@@ -24,7 +24,7 @@
 .. _git ready: https://gitready.com/
 .. _Fernando's git intro:
 .. _Fernando's git page: https://fernandoperez.org/teaching/git-intro/intro
-.. _git magic: http://www-cs-students.stanford.edu/~blynn/gitmagic/index.html
+.. _git magic: https://crypto.stanford.edu/~blynn//gitmagic/
 .. _git concepts: https://www.cduan.com/technical/git/
 .. _git clone: https://schacon.github.io/git/git-clone.html
 .. _git checkout: https://schacon.github.io/git/git-checkout.html
